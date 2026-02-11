@@ -1,60 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>ZAL’THERA</title>
-  <meta name="description" content="ZAL’THERA – Founder Edition. 50 pieces worldwide. Individually numbered." />
+  <meta name="description" content="ZAL’THERA – Limited Founder Edition. Individually numbered pieces. No restocks. No repetition." />
 
+  <!-- Social Preview (optional, aber sauber) -->
   <meta property="og:title" content="ZAL’THERA" />
-  <meta property="og:description" content="Founder Edition — 50 pieces worldwide. Individually numbered." />
+  <meta property="og:description" content="Limited Founder Edition. Individually numbered pieces." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://zalthera.de" />
+  <!-- <meta property="og:image" content="https://zalthera.de/assets/og.jpg" /> -->
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- HERO -->
-  <section class="hero" aria-label="ZAL’THERA Hero">
-    <div class="hero-content">
-      <h1>ZAL’THERA</h1>
-      <p class="tagline">Founder Edition — 50 Pieces Only</p>
-      <a class="button" href="#limited">Discover Drop 01</a>
-    </div>
-  </section>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
 
-  <!-- LIMITED -->
-  <section id="limited" class="limited">
-    <div class="block">
-      <h2>50 Pieces Worldwide</h2>
-      <p class="tagline">
-        Individually numbered garments.<br />
-        No restocks. No repetition.
-      </p>
-    </div>
-  </section>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <span class="brand__mark">Z</span>
+        <span class="brand__name">ZAL’THERA</span>
+      </div>
 
-  <!-- CRAFT -->
-  <section class="craft" aria-label="Craftsmanship">
-    <div class="craft-content">
-      <h2>Craftsmanship</h2>
-      <p class="tagline">
-        Each piece marked 01/50 – 50/50.<br />
-        Built for longevity.
-      </p>
+      <nav class="nav">
+        <a href="#drop">Drop 01</a>
+        <a href="#craft">Craft</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- FOOTER -->
-  <footer>
-    <p><a href="mailto:contact@zalthera.de">contact@zalthera.de</a></p>
-    <p>© <span id="year"></span> ZAL’THERA</p>
-  </footer>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-label="ZAL’THERA Hero">
+      <div class="hero__bg" role="img" aria-label="ZAL’THERA background"></div>
+
+      <div class="hero__content">
+        <p class="hero__kicker">Limited Founder Edition</p>
+        <h1 class="hero__title">ZAL’THERA</h1>
+        <p class="hero__sub">
+          Founder Edition — 50 Pieces Only
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#drop">Discover Drop 01</a>
+          <a class="btn btn--ghost" href="#contact">Contact</a>
+        </div>
+
+        <div class="hero__meta">
+          <span>Individually numbered</span>
+          <span class="dot">•</span>
+          <span>No restocks</span>
+          <span class="dot">•</span>
+          <span>No repetition</span>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="statement" aria-label="Statement">
+      <div class="wrap">
+        <p class="statement__line">ZAL’THERA is not fashion.</p>
+        <p class="statement__line">It is structure.</p>
+        <p class="statement__line">It is discipline.</p>
+        <p class="statement__line statement__line--accent">It is presence.</p>
+      </div>
+    </section>
+
+    <!-- DROP -->
+    <section id="drop" class="panel">
+      <div class="panel__bg panel__bg--drop" role="img" aria-label="Drop background"></div>
+
+      <div class="panel__content">
+        <h2 class="h2">50 Pieces Worldwide</h2>
+        <p class="p">
+          Individually numbered garments.<br />
+          No restocks. No repetition.
+        </p>
+
+        <div class="facts">
+          <div class="fact">
+            <div class="fact__label">Edition</div>
+            <div class="fact__value">01/50 — 50/50</div>
+          </div>
+          <div class="fact">
+            <div class="fact__label">Philosophy</div>
+            <div class="fact__value">No compromise</div>
+          </div>
+          <div class="fact">
+            <div class="fact__label">Build</div>
+            <div class="fact__value">Built for longevity</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRAFT -->
+    <section id="craft" class="panel">
+      <div class="panel__bg panel__bg--craft" role="img" aria-label="Craft background"></div>
+
+      <div class="panel__content panel__content--narrow">
+        <h2 class="h2">Craftsmanship</h2>
+        <p class="p">
+          Each piece marked 01/50 — 50/50.<br />
+          Built for longevity.
+        </p>
+
+        <div class="bullets">
+          <div class="bullet">Precision over volume</div>
+          <div class="bullet">Materials that last</div>
+          <div class="bullet">A signature, not a product</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2 class="h2">Contact</h2>
+        <p class="p">
+          Business & inquiries:
+        </p>
+
+        <a class="mail" href="mailto:contact@zalthera.de">contact@zalthera.de</a>
+
+        <div class="contact__mini">
+          <span>© 2026 ZAL’THERA</span>
+          <span class="dot">•</span>
+          <a href="#" class="link">Impressum</a>
+          <span class="dot">•</span>
+          <a href="#" class="link">Datenschutz</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Smooth scroll (dezent, ohne Framework)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
   </script>
 </body>
 </html>
