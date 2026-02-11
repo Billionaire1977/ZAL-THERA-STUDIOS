@@ -1,12 +1,18 @@
 :root{
   --bg:#000;
   --fg:#ffffff;
-  --muted:rgba(255,255,255,0.7);
+  --muted:rgba(255,255,255,0.72);
+
+  /* Overlay-Stärken (0.00 = kein Overlay, 1.00 = komplett schwarz) */
+  --heroOverlay: 0.52;
+  --craftOverlay: 0.62;
+
+  /* Typo */
+  --trackingWide: 0.10em;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-
-html, body { height: 100%; }
+html, body{height:100%;}
 
 body{
   background:var(--bg);
@@ -15,8 +21,6 @@ body{
   overflow-x:hidden;
 }
 
-/* ---------- Sections ---------- */
-
 section{
   min-height:100vh;
   display:flex;
@@ -24,121 +28,138 @@ section{
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:40px 20px;
+  padding:44px 20px;
 }
 
-/* ---------- HERO ---------- */
-
+/* HERO */
 .hero{
   position:relative;
-  background:url('assets/hero-1.png') center/cover no-repeat;
+  background:url("assets/hero-1.png") center/cover no-repeat;
+}
+
+/* leichtes “Lux”-Gradient oben/unten */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.25) 40%,
+    rgba(0,0,0,0.55)
+  );
 }
 
 .hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(1200px 600px at 50% 35%, rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
-    linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.65));
+  background:rgba(0,0,0,var(--heroOverlay));
 }
 
 .hero-content{
   position:relative;
   z-index:2;
-  padding: 0 10px;
+  max-width:900px;
+  padding:0 10px;
 }
 
 h1{
-  font-size:clamp(2.5rem,5vw,4rem);
-  letter-spacing:0.08em;
-  margin-bottom:20px;
+  font-size:clamp(2.6rem,5vw,4.2rem);
+  letter-spacing:var(--trackingWide);
+  margin-bottom:16px;
+}
+
+h2{
+  font-size:clamp(1.9rem,3.5vw,2.4rem);
+  letter-spacing:0.06em;
+  margin-bottom:14px;
 }
 
 .tagline{
   color:var(--muted);
-  font-size:1.1rem;
-  margin-bottom:30px;
+  font-size:clamp(1.0rem,1.4vw,1.15rem);
+  line-height:1.6;
+  margin-bottom:26px;
 }
-
-/* ---------- Button ---------- */
 
 .button{
   display:inline-block;
   border:1px solid rgba(255,255,255,0.28);
-  padding:14px 26px;
+  padding:12px 22px;
   text-decoration:none;
   color:white;
   border-radius:999px;
   transition:0.25s ease;
-  letter-spacing:0.04em;
-  background:rgba(0,0,0,0.25);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(2px);
 }
 
 .button:hover{
-  border-color:rgba(255,255,255,0.5);
-  transform: translateY(-1px);
+  border-color:rgba(255,255,255,0.85);
+  transform:translateY(-1px);
 }
 
-/* ---------- LIMITED ---------- */
-
+/* LIMITED */
 .limited{
   background:#050505;
 }
 
-.limited h2{
-  font-size:2rem;
-  margin-bottom:20px;
-  letter-spacing:0.1em;
+.limited .block{
+  max-width:720px;
 }
 
-/* ---------- CRAFT ---------- */
-
+/* CRAFT */
 .craft{
-  background:url('assets/hero-3.png') center/cover no-repeat;
   position:relative;
+  background:url("assets/hero-3.png") center/cover no-repeat;
+}
+
+.craft::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.25) 45%,
+    rgba(0,0,0,0.70)
+  );
 }
 
 .craft::after{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.65);
+  background:rgba(0,0,0,var(--craftOverlay));
 }
 
 .craft-content{
   position:relative;
   z-index:2;
-  max-width:600px;
-  padding: 0 10px;
+  max-width:720px;
 }
 
-/* ---------- Footer ---------- */
-
+/* FOOTER */
 footer{
-  padding:60px 20px;
+  padding:56px 20px 70px;
   text-align:center;
-  border-top:1px solid rgba(255,255,255,0.1);
+  border-top:1px solid rgba(255,255,255,0.10);
+  background:#000;
 }
 
 footer p{
   color:var(--muted);
   margin-bottom:10px;
+  font-size:0.95rem;
 }
 
-a{
-  color:white;
+footer a{
+  color:var(--fg);
   text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,0.15);
+  padding-bottom:2px;
 }
 
-a:hover{
-  text-decoration:underline;
-}
-
-/* ---------- Mobile tuning ---------- */
-@media (max-width: 480px) {
-  .tagline { font-size: 1rem; }
-  .button { padding: 12px 20px; }
-  .limited h2 { font-size: 1.7rem; }
+footer a:hover{
+  border-bottom-color:rgba(255,255,255,0.7);
 }
