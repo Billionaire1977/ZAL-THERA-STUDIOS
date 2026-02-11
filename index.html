@@ -1,287 +1,180 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ZAL’THERA</title>
-  <meta name="description" content="ZAL’THERA – Limited Founder Edition. Individually numbered pieces." />
+<title>ZAL’THERA</title>
+<meta name="description" content="ZAL’THERA – Founder Edition. 50 individually numbered pieces.">
 
-  <style>
-    :root{
-      --bg:#050505;
-      --fg:#f2f2f2;
-      --muted:rgba(242,242,242,0.72);
-      --line:rgba(255,255,255,0.10);
-      --btn:rgba(255,255,255,0.22);
-      --btnHover:rgba(255,255,255,0.42);
-      --glass:rgba(0,0,0,0.25);
-    }
+<style>
+:root{
+--bg:#000;
+--fg:#ffffff;
+--muted:rgba(255,255,255,0.7);
+}
 
-    *{margin:0;padding:0;box-sizing:border-box;}
-    html,body{height:100%;}
-    body{
-      background:var(--bg);
-      color:var(--fg);
-      font-family:-apple-system,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      overflow-x:hidden;
-    }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-    /* ---------- NAV ---------- */
-    .nav{
-      position:fixed;
-      top:0; left:0; right:0;
-      z-index:50;
-      padding:14px 18px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .nav-inner{
-      max-width:1100px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-    }
-    .brand{
-      font-weight:700;
-      letter-spacing:0.18em;
-      text-transform:uppercase;
-      font-size:12px;
-      color:var(--fg);
-      text-decoration:none;
-      white-space:nowrap;
-    }
-    .nav-links{
-      display:flex;
-      gap:14px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .nav-links a{
-      color:rgba(242,242,242,0.82);
-      text-decoration:none;
-      font-size:12px;
-      letter-spacing:0.10em;
-      text-transform:uppercase;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.10);
-      background:rgba(0,0,0,0.10);
-      transition:0.2s ease;
-    }
-    .nav-links a:hover{
-      border-color:rgba(255,255,255,0.25);
-      color:var(--fg);
-    }
+body{
+background:var(--bg);
+color:var(--fg);
+font-family:-apple-system,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+overflow-x:hidden;
+}
 
-    /* ---------- SECTIONS ---------- */
-    section{
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:clamp(28px,5vw,56px) 20px;
-      position:relative;
-      isolation:isolate;
-    }
+/* ---------- Sections ---------- */
 
-    /* small offset so anchors don't hide behind fixed nav */
-    .anchor{ scroll-margin-top: 86px; }
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px 20px;
+}
 
-    /* ---------- HERO ---------- */
-    .hero{
-      background:url('assets/hero-1.png') center/cover no-repeat;
-      padding-top:96px; /* room for nav */
-    }
-    .hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(1200px 600px at 50% 35%, rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
-    linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.65));
-      z-index:-1;
-    }
+/* ---------- HERO ---------- */
 
-    .hero-content{max-width:820px;}
-    h1{
-      font-size:clamp(2.6rem,5.4vw,4.2rem);
-      letter-spacing:0.10em;
-      margin-bottom:14px;
-      text-transform:uppercase;
-    }
-    .tagline{
-      color:var(--muted);
-      font-size:clamp(1.0rem,2.2vw,1.15rem);
-      line-height:1.6;
-      margin-bottom:26px;
-    }
-    .button{
-      display:inline-block;
-      border:1px solid var(--btn);
-      padding:12px 22px;
-      text-decoration:none;
-      color:var(--fg);
-      border-radius:999px;
-      transition:0.25s ease;
-      letter-spacing:0.02em;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      background:rgba(0,0,0,0.18);
-    }
-    .button:hover{border-color:var(--btnHover);}
+.hero{
+position:relative;
+background:url('assets/hero-1.png') center/cover no-repeat;
+}
 
-    /* ---------- LIMITED ---------- */
-    .limited{ background:#070707; }
-    h2{
-      font-size:clamp(1.6rem,3.6vw,2.1rem);
-      margin-bottom:14px;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-    }
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(1200px 600px at 50% 35%, rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
+linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.65));
+}
 
-    /* ---------- FOUNDER STANDARD (NEW) ---------- */
-    .standard{
-      background:#060606;
-    }
-    .standard-card{
-      width:min(860px, 100%);
-      border:1px solid rgba(255,255,255,0.10);
-      border-radius:18px;
-      padding:clamp(18px,3.8vw,28px);
-      background:linear-gradient(to bottom, rgba(255,255,255,0.04), rgba(0,0,0,0.15));
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-    .standard-title{
-      font-size:12px;
-      letter-spacing:0.20em;
-      text-transform:uppercase;
-      color:rgba(242,242,242,0.78);
-      margin-bottom:10px;
-    }
-    .standard-copy{
-      color:rgba(242,242,242,0.86);
-      font-size:clamp(1.02rem, 2.1vw, 1.12rem);
-      line-height:1.75;
-    }
+.hero-content{
+position:relative;
+z-index:2;
+}
 
-    /* ---------- CRAFT ---------- */
-    .craft{
-      background:url('assets/hero-3.png') center/cover no-repeat;
-    }
-    .craft::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(1000px 520px at 50% 45%, rgba(0,0,0,0.18), rgba(0,0,0,0.78)),
-        linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.82));
-      z-index:-1;
-    }
-    .craft-content{max-width:640px;}
+h1{
+font-size:clamp(2.5rem,5vw,4rem);
+letter-spacing:0.08em;
+margin-bottom:20px;
+}
 
-    /* ---------- FOOTER ---------- */
-    footer{
-      padding:64px 20px 80px;
-      text-align:center;
-      border-top:1px solid var(--line);
-      background:#050505;
-    }
-    footer p{
-      color:var(--muted);
-      margin-bottom:10px;
-      font-size:14px;
-      letter-spacing:0.02em;
-    }
-    .mail{
-      display:inline-block;
-      color:var(--fg);
-      text-decoration:none;
-      border:1px solid rgba(255,255,255,0.18);
-      padding:10px 14px;
-      border-radius:999px;
-      margin-top:8px;
-    }
-    .mail:hover{border-color:rgba(255,255,255,0.35);}
+.tagline{
+color:var(--muted);
+font-size:1.1rem;
+margin-bottom:30px;
+}
 
-    /* ---------- MOBILE ---------- */
-    @media (max-width:520px){
-      .nav-links a{ padding:7px 9px; }
-      h1{letter-spacing:0.08em;}
-      .button{padding:12px 18px;}
-    }
-  </style>
+.button{
+display:inline-block;
+border:1px solid rgba(255,255,255,0.28);
+padding:14px 26px;
+text-decoration:none;
+color:white;
+border-radius:999px;
+transition:0.25s ease;
+letter-spacing:0.04em;
+background:rgba(0,0,0,0.25);
+backdrop-filter: blur(8px);
+}
+
+.button:hover{
+border-color:rgba(255,255,255,0.5);
+transform: translateY(-1px);
+}
+
+/* ---------- LIMITED ---------- */
+
+.limited{
+background:#050505;
+}
+
+.limited h2{
+font-size:2rem;
+margin-bottom:20px;
+letter-spacing:0.1em;
+}
+
+/* ---------- CRAFT ---------- */
+
+.craft{
+background:url('assets/hero-3.png') center/cover no-repeat;
+position:relative;
+}
+
+.craft::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.65);
+}
+
+.craft-content{
+position:relative;
+z-index:2;
+max-width:600px;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+padding:60px 20px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.1);
+}
+
+footer p{
+color:var(--muted);
+margin-bottom:10px;
+}
+
+a{
+color:white;
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" aria-label="Primary">
-    <div class="nav-inner">
-      <a class="brand" href="#top">ZAL’THERA</a>
-      <div class="nav-links">
-        <a href="#drop" class="anchor">Drop 01</a>
-        <a href="#standard" class="anchor">Standard</a>
-        <a href="#contact" class="anchor">Contact</a>
-      </div>
-    </div>
-  </nav>
+<section class="hero">
+<div class="hero-content">
+<h1>ZAL’THERA</h1>
+<p class="tagline">Founder Edition — 50 Pieces Only</p>
+<a href="#limited" class="button">Discover Drop 01</a>
+</div>
+</section>
 
-  <!-- HERO -->
-  <section id="top" class="hero">
-    <div class="hero-content">
-      <h1>ZAL’THERA</h1>
-      <p class="tagline">Limited Founder Edition</p>
-      <a href="#drop" class="button">Discover Drop 01</a>
-    </div>
-  </section>
+<section id="limited" class="limited">
+<h2>50 Pieces Worldwide</h2>
+<p class="tagline">
+Individually numbered garments.<br>
+No restocks. No repetition.
+</p>
+</section>
 
-  <!-- DROP -->
-  <section id="drop" class="limited anchor">
-    <h2>50 Pieces Worldwide</h2>
-    <p class="tagline">
-      Individually numbered garments.<br />
-      No restocks. No repetition.
-    </p>
-  </section>
+<section class="craft">
+<div class="craft-content">
+<h2>Craftsmanship</h2>
+<p class="tagline">
+Each piece marked 01/50 – 50/50.<br>
+Built for longevity.
+</p>
+</div>
+</section>
 
-  <!-- STANDARD (NEW) -->
-  <section id="standard" class="standard anchor">
-    <div class="standard-card">
-      <div class="standard-title">The Founder Standard</div>
-      <div class="standard-copy">
-        Built to last — not for trends.<br />
-        Every detail chosen for longevity, restraint, and identity.<br />
-        ZAL’THERA is defined by discipline: limited, numbered, uncompromising.
-      </div>
-    </div>
-  </section>
-
-  <!-- CRAFT -->
-  <section class="craft">
-    <div class="craft-content">
-      <h2>Craftsmanship</h2>
-      <p class="tagline">
-        Each piece marked 01/50 – 50/50.<br />
-        Built for longevity.
-      </p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer id="contact" class="anchor">
-    <p>Contact</p>
-    <a class="mail" href="mailto:contact@zalthera.de">contact@zalthera.de</a>
-    <p style="margin-top:18px;">© 2026 ZAL’THERA</p>
-  </footer>
+<footer>
+<p>contact@zalthera.de</p>
+<p>© 2026 ZAL’THERA</p>
+</footer>
 
 </body>
 </html>
+
