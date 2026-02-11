@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>ZAL’THERA</title>
-  <meta name="description" content="ZAL’THERA – Founder Edition. 50 individually numbered pieces.">
+  <meta name="description" content="ZAL’THERA – Founder Edition. 50 pieces worldwide. Individually numbered." />
 
-  <link rel="stylesheet" href="style.css">
+  <meta property="og:title" content="ZAL’THERA" />
+  <meta property="og:description" content="Founder Edition — 50 pieces worldwide. Individually numbered." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zalthera.de" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
-  <section class="hero">
+  <!-- HERO -->
+  <section class="hero" aria-label="ZAL’THERA Hero">
     <div class="hero-content">
       <h1>ZAL’THERA</h1>
       <p class="tagline">Founder Edition — 50 Pieces Only</p>
-      <a href="#limited" class="button">Discover Drop 01</a>
+      <a class="button" href="#limited">Discover Drop 01</a>
     </div>
   </section>
 
+  <!-- LIMITED -->
   <section id="limited" class="limited">
-    <h2>50 Pieces Worldwide</h2>
-    <p class="tagline">
-      Individually numbered garments.<br>
-      No restocks. No repetition.
-    </p>
+    <div class="block">
+      <h2>50 Pieces Worldwide</h2>
+      <p class="tagline">
+        Individually numbered garments.<br />
+        No restocks. No repetition.
+      </p>
+    </div>
   </section>
 
-  <section class="craft">
+  <!-- CRAFT -->
+  <section class="craft" aria-label="Craftsmanship">
     <div class="craft-content">
       <h2>Craftsmanship</h2>
       <p class="tagline">
-        Each piece marked 01/50 – 50/50.<br>
+        Each piece marked 01/50 – 50/50.<br />
         Built for longevity.
       </p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>contact@zalthera.de</p>
-    <p>© 2026 ZAL’THERA</p>
+    <p><a href="mailto:contact@zalthera.de">contact@zalthera.de</a></p>
+    <p>© <span id="year"></span> ZAL’THERA</p>
   </footer>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
-</html> 
+</html>
+
