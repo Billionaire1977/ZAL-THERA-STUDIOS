@@ -15,6 +15,7 @@
       --line:rgba(255,255,255,0.10);
       --btn:rgba(255,255,255,0.22);
       --btnHover:rgba(255,255,255,0.42);
+      --glass:rgba(0,0,0,0.25);
     }
 
     *{margin:0;padding:0;box-sizing:border-box;}
@@ -26,6 +27,59 @@
       overflow-x:hidden;
     }
 
+    /* ---------- NAV ---------- */
+    .nav{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:50;
+      padding:14px 18px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      font-size:12px;
+      color:var(--fg);
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .nav-links{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      color:rgba(242,242,242,0.82);
+      text-decoration:none;
+      font-size:12px;
+      letter-spacing:0.10em;
+      text-transform:uppercase;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.10);
+      background:rgba(0,0,0,0.10);
+      transition:0.2s ease;
+    }
+    .nav-links a:hover{
+      border-color:rgba(255,255,255,0.25);
+      color:var(--fg);
+    }
+
+    /* ---------- SECTIONS ---------- */
     section{
       min-height:100vh;
       display:flex;
@@ -38,12 +92,14 @@
       isolation:isolate;
     }
 
-    /* ---------- HERO (Premium Overlay) ---------- */
+    /* small offset so anchors don't hide behind fixed nav */
+    .anchor{ scroll-margin-top: 86px; }
+
+    /* ---------- HERO ---------- */
     .hero{
       background:url('assets/hero-1.png') center/cover no-repeat;
+      padding-top:96px; /* room for nav */
     }
-
-    /* filmischer Verlauf statt „schwarz drüber“ */
     .hero::after{
       content:"";
       position:absolute;
@@ -54,26 +110,19 @@
       z-index:-1;
     }
 
-    /* Bild minimal „hochziehen“, bleibt aber dark-lux */
-    .hero{
-      filter:none;
-    }
-
-    .hero-content{max-width:780px;}
+    .hero-content{max-width:820px;}
     h1{
       font-size:clamp(2.6rem,5.4vw,4.2rem);
       letter-spacing:0.10em;
       margin-bottom:14px;
       text-transform:uppercase;
     }
-
     .tagline{
       color:var(--muted);
       font-size:clamp(1.0rem,2.2vw,1.15rem);
       line-height:1.6;
       margin-bottom:26px;
     }
-
     .button{
       display:inline-block;
       border:1px solid var(--btn);
@@ -90,9 +139,7 @@
     .button:hover{border-color:var(--btnHover);}
 
     /* ---------- LIMITED ---------- */
-    .limited{
-      background:#070707;
-    }
+    .limited{ background:#070707; }
     h2{
       font-size:clamp(1.6rem,3.6vw,2.1rem);
       margin-bottom:14px;
@@ -100,11 +147,36 @@
       text-transform:uppercase;
     }
 
+    /* ---------- FOUNDER STANDARD (NEW) ---------- */
+    .standard{
+      background:#060606;
+    }
+    .standard-card{
+      width:min(860px, 100%);
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:18px;
+      padding:clamp(18px,3.8vw,28px);
+      background:linear-gradient(to bottom, rgba(255,255,255,0.04), rgba(0,0,0,0.15));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .standard-title{
+      font-size:12px;
+      letter-spacing:0.20em;
+      text-transform:uppercase;
+      color:rgba(242,242,242,0.78);
+      margin-bottom:10px;
+    }
+    .standard-copy{
+      color:rgba(242,242,242,0.86);
+      font-size:clamp(1.02rem, 2.1vw, 1.12rem);
+      line-height:1.75;
+    }
+
     /* ---------- CRAFT ---------- */
     .craft{
       background:url('assets/hero-3.png') center/cover no-repeat;
     }
-
     .craft::after{
       content:"";
       position:absolute;
@@ -114,7 +186,6 @@
         linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.82));
       z-index:-1;
     }
-
     .craft-content{max-width:640px;}
 
     /* ---------- FOOTER ---------- */
@@ -122,6 +193,7 @@
       padding:64px 20px 80px;
       text-align:center;
       border-top:1px solid var(--line);
+      background:#050505;
     }
     footer p{
       color:var(--muted);
@@ -140,8 +212,9 @@
     }
     .mail:hover{border-color:rgba(255,255,255,0.35);}
 
-    /* kleine Optimierung für Mobile */
-    @media (max-width:480px){
+    /* ---------- MOBILE ---------- */
+    @media (max-width:520px){
+      .nav-links a{ padding:7px 9px; }
       h1{letter-spacing:0.08em;}
       .button{padding:12px 18px;}
     }
@@ -150,15 +223,29 @@
 
 <body>
 
-  <section class="hero">
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="brand" href="#top">ZAL’THERA</a>
+      <div class="nav-links">
+        <a href="#drop" class="anchor">Drop 01</a>
+        <a href="#standard" class="anchor">Standard</a>
+        <a href="#contact" class="anchor">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="top" class="hero">
     <div class="hero-content">
       <h1>ZAL’THERA</h1>
       <p class="tagline">Limited Founder Edition</p>
-      <a href="#limited" class="button">Discover Drop 01</a>
+      <a href="#drop" class="button">Discover Drop 01</a>
     </div>
   </section>
 
-  <section id="limited" class="limited">
+  <!-- DROP -->
+  <section id="drop" class="limited anchor">
     <h2>50 Pieces Worldwide</h2>
     <p class="tagline">
       Individually numbered garments.<br />
@@ -166,6 +253,19 @@
     </p>
   </section>
 
+  <!-- STANDARD (NEW) -->
+  <section id="standard" class="standard anchor">
+    <div class="standard-card">
+      <div class="standard-title">The Founder Standard</div>
+      <div class="standard-copy">
+        Built to last — not for trends.<br />
+        Every detail chosen for longevity, restraint, and identity.<br />
+        ZAL’THERA is defined by discipline: limited, numbered, uncompromising.
+      </div>
+    </div>
+  </section>
+
+  <!-- CRAFT -->
   <section class="craft">
     <div class="craft-content">
       <h2>Craftsmanship</h2>
@@ -176,7 +276,8 @@
     </div>
   </section>
 
-  <footer>
+  <!-- FOOTER -->
+  <footer id="contact" class="anchor">
     <p>Contact</p>
     <a class="mail" href="mailto:contact@zalthera.de">contact@zalthera.de</a>
     <p style="margin-top:18px;">© 2026 ZAL’THERA</p>
