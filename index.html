@@ -7,127 +7,152 @@
   <meta name="description" content="ZAL’THERA — Private Founder Release. Access by request only." />
 
   <link rel="stylesheet" href="./styles.css" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
 </head>
 
 <body>
 
-<header class="nav">
-  <a class="brand" href="#top">ZAL’THERA</a>
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <img src="assets/apple-touch-icon.png" alt="ZALTHERA Emblem" class="loader-logo">
+  </div>
 
-  <nav class="links">
-    <a href="#drop">Drop 01</a>
-    <a href="#craft">Craft</a>
-    <a href="#access">Access</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- NAV -->
+  <header class="nav">
+    <a class="brand" href="#top">ZAL’THERA</a>
 
-<main id="top">
+    <nav class="links">
+      <a href="#drop">Drop 01</a>
+      <a href="#craft">Craft</a>
+      <a href="#access">Access</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero hero--one">
-    <div class="overlay"></div>
-    <div class="hero__inner">
+  <main id="top">
 
-      <div class="kicker">PRIVATE FOUNDER RELEASE</div>
-      <h1>ZAL’THERA</h1>
-      <p class="sub">Founder Edition — Limited to 50 Pieces Worldwide</p>
+    <!-- HERO -->
+    <section class="hero hero--one">
+      <div class="overlay"></div>
+      <div class="hero__inner">
+        <div class="kicker">PRIVATE FOUNDER RELEASE</div>
+        <h1>ZAL’THERA</h1>
+        <p class="sub">Founder Edition — Limited to 50 Pieces Worldwide</p>
 
-      <div class="cta">
-        <a class="btn" href="#access">Request Private Access</a>
-        <a class="btn btn--ghost" href="#drop">Discover Drop 01</a>
+        <div class="cta">
+          <a class="btn" href="#access">Request Private Access</a>
+          <a class="btn btn--ghost" href="#drop">Discover Drop 01</a>
+        </div>
+
+        <div class="meta">
+          <span>Individually numbered</span>
+          <span>No restocks</span>
+          <span>No repetition</span>
+        </div>
       </div>
+      <div class="fade"></div>
+    </section>
 
-      <div class="meta">
-        <span>Individually numbered</span>
-        <span>No restocks</span>
-        <span>No repetition</span>
+    <!-- DROP -->
+    <section id="drop" class="panel panel--dark">
+      <div class="panel__inner">
+        <h2>DROP 01</h2>
+        <p class="lead">
+          Deep Red Founder Edition. Individually numbered pieces — 01/50 to 50/50.
+          Crafted with precision and built for longevity.
+        </p>
       </div>
+    </section>
 
-    </div>
-    <div class="fade"></div>
-  </section>
+    <!-- CRAFT -->
+    <section id="craft" class="hero hero--two">
+      <div class="overlay overlay--strong"></div>
+      <div class="hero__inner">
+        <h2>CRAFT & PROCESS</h2>
+        <p class="sub">
+          No mass production. No shortcuts. Each piece is built to outlast trends.
+        </p>
+      </div>
+      <div class="fade"></div>
+    </section>
 
-  <!-- DROP -->
-  <section id="drop" class="panel panel--dark">
-    <div class="panel__inner">
-      <h2>DROP 01</h2>
-      <p class="lead">
-        Deep Red Founder Edition. Individually numbered pieces — 01/50 to 50/50.
-        Crafted with precision and built for longevity.
-      </p>
-    </div>
-  </section>
+    <!-- ACCESS -->
+    <section id="access" class="panel panel--dark">
+      <div class="panel__inner">
+        <h2>REQUEST PRIVATE ACCESS</h2>
+        <p class="lead">
+          Join the private release list. Access confirmed manually.
+        </p>
 
-  <!-- CRAFT -->
-  <section id="craft" class="hero hero--two">
-    <div class="overlay overlay--strong"></div>
-    <div class="hero__inner">
-      <h2>CRAFT & PROCESS</h2>
-      <p class="sub">
-        No mass production. No shortcuts. Each piece is built to outlast trends.
-      </p>
-    </div>
-    <div class="fade"></div>
-  </section>
+        <!-- FORMSPREE FORM -->
+        <form class="form"
+              action="https://formspree.io/f/DEIN_FORM_ID"
+              method="POST">
 
-  <!-- ACCESS -->
-  <section id="access" class="panel panel--dark">
-    <div class="panel__inner">
-      <h2>REQUEST PRIVATE ACCESS</h2>
-      <p class="lead">
-        Join the private release list. Access confirmed manually.
-      </p>
+          <!-- Redirect after submit (deine eigene Seite) -->
+          <input type="hidden" name="_next" value="https://zalthera.de/success.html">
 
-      <!-- 🔥 FORM START -->
-      <form action="https://formspree.io/f/xbdagyrw" method="POST" class="form">
+          <!-- Optional: Subject in Formspree emails -->
+          <input type="hidden" name="_subject" value="ZAL’THERA — Private Access Request">
 
-        <label>
-          <span>Name</span>
-          <input type="text" name="name" required>
-        </label>
+          <!-- Optional: Spam-Honeypot (unsichtbar) -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" required>
-        </label>
+          <label>
+            <span>Name</span>
+            <input name="name" type="text" required />
+          </label>
 
-        <label>
-          <span>Message</span>
-          <textarea name="message" rows="4" required></textarea>
-        </label>
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" required />
+          </label>
 
-        <button type="submit" class="btn btn--solid">
-          Join Private Release
-        </button>
+          <button class="btn btn--solid" type="submit">
+            Request Access
+          </button>
 
-      </form>
-      <!-- 🔥 FORM END -->
+          <p class="form-note">
+            You’ll receive a confirmation if your access is approved.
+          </p>
 
-    </div>
-  </section>
+        </form>
+      </div>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="hero hero--three">
-    <div class="overlay overlay--strong"></div>
-    <div class="hero__inner">
-      <h2>CONTACT</h2>
-      <a class="mail" href="mailto:contact@zalthera.de">
-        contact@zalthera.de
-      </a>
+    <!-- CONTACT -->
+    <section id="contact" class="hero hero--three">
+      <div class="overlay overlay--strong"></div>
+      <div class="hero__inner">
+        <h2>CONTACT</h2>
+        <a class="mail" href="mailto:studios@zalthera.de">
+          studios@zalthera.de
+        </a>
 
-      <footer class="footer">
-        <div>© <span id="year"></span> ZAL’THERA</div>
-      </footer>
-    </div>
-    <div class="fade"></div>
-  </section>
+        <footer class="footer">
+          <div>© <span id="year"></span> ZAL’THERA</div>
+        </footer>
+      </div>
+      <div class="fade"></div>
+    </section>
 
-</main>
+  </main>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <!-- PRELOADER SCRIPT -->
+  <script>
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("preloader");
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 600);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
