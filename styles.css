@@ -1,17 +1,6 @@
-/* =========================
-   ZAL’THERA — Founder Style
-   Luxury Black / Gold Theme
-========================= */
-
-:root {
-  --black: #0b0b0d;
-  --dark: #111114;
-  --gold: #c6a75e;
-  --gold-soft: #e0c78f;
-  --text: #f4f4f4;
-  --muted: #9d9d9d;
-  --border: rgba(198,167,94,0.25);
-}
+/* ============================= */
+/* ZAL'THERA Studios - Styles   */
+/* ============================= */
 
 * {
   margin: 0;
@@ -19,287 +8,198 @@
   box-sizing: border-box;
 }
 
-body {
-  background: var(--black);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
+html, body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  scroll-behavior: smooth;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* ============================= */
+/* NAVIGATION                    */
+/* ============================= */
 
-.nav {
+nav {
   position: fixed;
   width: 100%;
-  top: 0;
   padding: 20px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(10px);
-  z-index: 1000;
 }
 
-.brand {
+nav .logo {
+  font-weight: 700;
+  letter-spacing: 2px;
   font-size: 18px;
-  letter-spacing: 3px;
-  text-decoration: none;
-  color: var(--gold);
-  font-weight: 600;
 }
 
-.links a {
-  margin-left: 30px;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
   text-decoration: none;
-  color: var(--muted);
+  color: #fff;
   font-size: 14px;
   letter-spacing: 1px;
   transition: 0.3s;
 }
 
-.links a:hover {
-  color: var(--gold);
+nav a:hover {
+  color: #c6a84a;
 }
 
-/* =========================
-   HERO
-========================= */
+/* ============================= */
+/* HERO SECTIONS                 */
+/* ============================= */
 
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 120px 20px 80px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero--one {
+  background-image: url("./assets/hero-1.png");
+}
+
+.hero--two {
+  background-image: url("./assets/hero-2.png");
+}
+
+.hero--three {
+  background-image: url("./assets/hero-3.png");
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.overlay--strong {
+  background: rgba(0,0,0,0.7);
+}
+
+.hero__inner {
   position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 40px;
 }
 
 .hero h1 {
-  font-size: 64px;
-  letter-spacing: 6px;
-  color: var(--gold);
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 3px;
   margin-bottom: 20px;
 }
 
-.hero h2 {
-  font-size: 42px;
-  letter-spacing: 4px;
-  color: var(--gold);
-  margin-bottom: 20px;
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.9;
 }
 
-.sub {
-  color: var(--muted);
-  max-width: 600px;
-  margin: 0 auto 40px auto;
-}
-
-/* =========================
-   BUTTONS
-========================= */
+/* ============================= */
+/* BUTTONS                       */
+/* ============================= */
 
 .btn {
-  display: inline-block;
-  padding: 14px 28px;
-  border: 1px solid var(--gold);
-  color: var(--gold);
+  padding: 14px 32px;
+  border: 1px solid #c6a84a;
+  background: transparent;
+  color: #c6a84a;
   text-decoration: none;
   letter-spacing: 1px;
   transition: 0.3s;
-  margin: 10px;
+  display: inline-block;
 }
 
 .btn:hover {
-  background: var(--gold);
+  background: #c6a84a;
   color: #000;
 }
 
-.btn--solid {
-  background: var(--gold);
-  color: #000;
-}
+/* ============================= */
+/* SECTIONS                      */
+/* ============================= */
 
-.btn--solid:hover {
-  background: var(--gold-soft);
-}
-
-/* =========================
-   PANELS
-========================= */
-
-.panel {
-  padding: 120px 20px;
+.section {
+  padding: 120px 60px;
   text-align: center;
 }
 
-.panel--dark {
-  background: var(--dark);
-}
-
-.lead {
-  max-width: 700px;
-  margin: 0 auto 60px auto;
-  color: var(--muted);
-}
-
-/* =========================
-   GRID / CARDS
-========================= */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.card {
-  border: 1px solid var(--border);
-  padding: 30px;
-  background: rgba(255,255,255,0.02);
-  transition: 0.3s;
-}
-
-.card:hover {
-  border-color: var(--gold);
-  transform: translateY(-4px);
-}
-
-.card__title {
-  color: var(--gold);
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.card__text {
-  color: var(--muted);
-}
-
-/* =========================
-   FORM
-========================= */
-
-.form {
-  max-width: 600px;
-  margin: auto;
-}
-
-.form input,
-.form textarea {
-  width: 100%;
-  padding: 14px;
-  margin-top: 6px;
+.section h2 {
+  font-size: 36px;
   margin-bottom: 20px;
-  background: #141418;
-  border: 1px solid var(--border);
-  color: white;
+  letter-spacing: 2px;
 }
 
-.form input:focus,
-.form textarea:focus {
-  outline: none;
-  border-color: var(--gold);
+.section p {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  opacity: 0.8;
 }
 
-.row {
-  display: flex;
-  gap: 20px;
-}
+/* ============================= */
+/* FOOTER                        */
+/* ============================= */
 
-.row label {
-  flex: 1;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-  margin-top: 60px;
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #111;
   font-size: 14px;
-  color: var(--muted);
+  opacity: 0.6;
 }
 
-.footer__links a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: var(--muted);
+/* ============================= */
+/* FADE EFFECT                   */
+/* ============================= */
+
+.fade {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, #000);
 }
 
-.footer__links a:hover {
-  color: var(--gold);
-}
+/* ============================= */
+/* RESPONSIVE                    */
+/* ============================= */
 
-/* =========================
-   EMAIL LINK
-========================= */
+@media (max-width: 900px) {
 
-.mail {
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.mail:hover {
-  text-decoration: underline;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 42px;
-  }
-
-  .hero h2 {
-    font-size: 28px;
-  }
-
-  .nav {
+  nav {
     padding: 20px;
   }
 
-  .links {
-    display: none;
+  nav ul {
+    gap: 15px;
   }
 
-  .row {
-    flex-direction: column;
+  .hero h1 {
+    font-size: 36px;
   }
-}
 
-/* PRELOADER */
+  .section {
+    padding: 80px 20px;
+  }
 
-#preloader {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.6s ease;
-}
-
-.loader-logo {
-  width: 140px;
-  animation: pulse 2s infinite ease-in-out;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.08); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.9; }
 }
 
 
