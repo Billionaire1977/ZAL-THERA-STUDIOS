@@ -14,11 +14,17 @@
 </head>
 
 <body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <img src="assets/apple-touch-icon.png" alt="ZALTHERA Emblem" class="loader-logo">
+  </div>
+
   <!-- NAV -->
   <header class="nav">
-    <a class="brand" href="#top" aria-label="ZAL’THERA">ZAL’THERA</a>
+    <a class="brand" href="#top">ZAL’THERA</a>
 
-    <nav class="links" aria-label="Navigation">
+    <nav class="links">
       <a href="#drop">Drop 01</a>
       <a href="#craft">Craft</a>
       <a href="#access">Access</a>
@@ -27,6 +33,7 @@
   </header>
 
   <main id="top">
+
     <!-- HERO -->
     <section class="hero hero--one">
       <div class="overlay"></div>
@@ -46,7 +53,6 @@
           <span>No repetition</span>
         </div>
       </div>
-
       <div class="fade"></div>
     </section>
 
@@ -58,21 +64,6 @@
           Deep Red Founder Edition. Individually numbered pieces — 01/50 to 50/50.
           Crafted with precision and built for longevity.
         </p>
-
-        <div class="grid">
-          <div class="card">
-            <div class="card__title">Edition</div>
-            <div class="card__text">Founder Edition — 50 Pieces Worldwide</div>
-          </div>
-          <div class="card">
-            <div class="card__title">Numbering</div>
-            <div class="card__text">Permanent numbering — never repeated</div>
-          </div>
-          <div class="card">
-            <div class="card__title">Release</div>
-            <div class="card__text">Access by request — confirmed privately</div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -84,14 +75,7 @@
         <p class="sub">
           No mass production. No shortcuts. Each piece is built to outlast trends.
         </p>
-
-        <div class="pills">
-          <span class="pill">Precision over volume</span>
-          <span class="pill">Long-term durability</span>
-          <span class="pill">Signature construction</span>
-        </div>
       </div>
-
       <div class="fade"></div>
     </section>
 
@@ -100,42 +84,28 @@
       <div class="panel__inner">
         <h2>REQUEST PRIVATE ACCESS</h2>
         <p class="lead">
-          Join the private release list. You’ll receive early access and a confirmation message
-          once Drop 01 is ready for release.
+          Join the private release list. Access confirmed manually.
         </p>
 
-        <!-- Simple mailto form (no backend needed) -->
         <form class="form"
               action="mailto:studios@zalthera.de"
               method="post"
               enctype="text/plain">
-          <div class="row">
-            <label>
-              <span>Name</span>
-              <input name="Name" type="text" placeholder="Your name" required />
-            </label>
 
-            <label>
-              <span>Country</span>
-              <input name="Country" type="text" placeholder="Germany" required />
-            </label>
-          </div>
+          <label>
+            <span>Name</span>
+            <input name="Name" type="text" required />
+          </label>
 
           <label>
             <span>Email</span>
-            <input name="Email" type="email" placeholder="you@email.com" required />
+            <input name="Email" type="email" required />
           </label>
 
-          <label>
-            <span>Message (optional)</span>
-            <textarea name="Message" rows="4" placeholder="Size interest / questions"></textarea>
-          </label>
+          <button class="btn btn--solid" type="submit">
+            Join Private Release List
+          </button>
 
-          <button class="btn btn--solid" type="submit">Join Private Release List</button>
-
-          <div class="note">
-            Access is confirmed manually. No spam. No mass mail.
-          </div>
         </form>
       </div>
     </section>
@@ -145,26 +115,32 @@
       <div class="overlay overlay--strong"></div>
       <div class="hero__inner">
         <h2>CONTACT</h2>
-        <p class="sub">Business & inquiries</p>
-
-        <a class="mail" href="mailto:studios@zalthera.de">studios@zalthera.de</a>
+        <a class="mail" href="mailto:studios@zalthera.de">
+          studios@zalthera.de
+        </a>
 
         <footer class="footer">
           <div>© <span id="year"></span> ZAL’THERA</div>
-          <div class="footer__links">
-            <a href="./impressum.html">Impressum</a>
-            <a href="./datenschutz.html">Datenschutz</a>
-          </div>
         </footer>
       </div>
-
       <div class="fade"></div>
     </section>
+
   </main>
 
+  <!-- PRELOADER SCRIPT -->
   <script>
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("preloader");
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 600);
+    });
+
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
 
