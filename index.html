@@ -1,160 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ZAL’THERA — Founder Edition</title>
-  <meta name="description" content="ZAL’THERA — Private Founder Release. Access by request only." />
+  <meta charset="UTF-8">
+  <title>ZALTHERA – Private Access</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-  <link rel="stylesheet" href="./styles.css" />
+    .container {
+      background: #1a1a1a;
+      padding: 40px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    }
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16.png" />
-  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #e10600;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff2b2b;
+    }
+
+    .success {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #00ff88;
+    }
+  </style>
 </head>
-
 <body>
 
-  <!-- PRELOADER -->
-  <div id="preloader">
-    <img src="./assets/apple-touch-icon.png" alt="ZAL’THERA Emblem" class="loader-logo">
+  <div class="container">
+    <h1>Request Private Access</h1>
+
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      
+      <input type="text" name="name" placeholder="Your Name" required>
+      
+      <input type="email" name="email" placeholder="Your Email" required>
+      
+      <textarea name="message" placeholder="Optional Message"></textarea>
+      
+      <button type="submit">Request Access</button>
+    </form>
+
   </div>
-
-  <!-- NAV -->
-  <header class="nav">
-    <a class="brand" href="#top">ZAL’THERA</a>
-
-    <nav class="links">
-      <a href="#drop">Drop 01</a>
-      <a href="#craft">Craft</a>
-      <a href="#access">Access</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main id="top">
-
-    <!-- HERO -->
-    <section class="hero hero--one">
-      <div class="overlay"></div>
-      <div class="hero__inner">
-        <div class="kicker">PRIVATE FOUNDER RELEASE</div>
-        <h1>ZAL’THERA</h1>
-        <p class="sub">Founder Edition — Limited to 50 Pieces Worldwide</p>
-
-        <div class="cta">
-          <a class="btn" href="#access">Request Private Access</a>
-          <a class="btn btn--ghost" href="#drop">Discover Drop 01</a>
-        </div>
-
-        <div class="meta">
-          <span>Individually numbered</span>
-          <span>No restocks</span>
-          <span>No repetition</span>
-        </div>
-      </div>
-      <div class="fade"></div>
-    </section>
-
-    <!-- DROP -->
-    <section id="drop" class="panel panel--dark">
-      <div class="panel__inner">
-        <h2>DROP 01</h2>
-        <p class="lead">
-          Deep Red Founder Edition. Individually numbered pieces — 01/50 to 50/50.
-          Crafted with precision and built for longevity.
-        </p>
-      </div>
-    </section>
-
-    <!-- CRAFT -->
-    <section id="craft" class="hero hero--two">
-      <div class="overlay overlay--strong"></div>
-      <div class="hero__inner">
-        <h2>CRAFT & PROCESS</h2>
-        <p class="sub">
-          No mass production. No shortcuts. Each piece is built to outlast trends.
-        </p>
-      </div>
-      <div class="fade"></div>
-    </section>
-
-    <!-- ACCESS -->
-    <section id="access" class="panel panel--dark">
-      <div class="panel__inner">
-        <h2>REQUEST PRIVATE ACCESS</h2>
-        <p class="lead">
-          Join the private release list. Access confirmed manually.
-        </p>
-
-        <!-- ✅ FORM: Formspree -->
-        <form class="form"
-              action="https://formspree.io/f/DEIN_FORM_ID"
-              method="POST">
-
-          <!-- Optional: Subject in your inbox -->
-          <input type="hidden" name="_subject" value="ZAL’THERA — Private Access Request" />
-
-          <!-- Optional: Redirect after submit (optional) -->
-          <input type="hidden" name="_redirect" value="https://zalthera.de/#access" />
-
-          <label>
-            <span>Name</span>
-            <input name="name" type="text" autocomplete="name" required />
-          </label>
-
-          <label>
-            <span>Email</span>
-            <input name="email" type="email" autocomplete="email" required />
-          </label>
-
-          <!-- Optional note field (keine Pflicht) -->
-          <label>
-            <span>Message (optional)</span>
-            <textarea name="message" rows="4" placeholder="Optional message..."></textarea>
-          </label>
-
-          <button class="btn btn--solid" type="submit">
-            Join Private Release List
-          </button>
-
-          <p class="tiny">
-            By submitting, you agree that we may contact you regarding access.  
-            <a href="./datenschutz.html">Datenschutz</a> · <a href="./impressum.html">Impressum</a>
-          </p>
-
-        </form>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="hero hero--three">
-      <div class="overlay overlay--strong"></div>
-      <div class="hero__inner">
-        <h2>CONTACT</h2>
-        <a class="mail" href="mailto:studios@zalthera.de">studios@zalthera.de</a>
-
-        <footer class="footer">
-          <div>© <span id="year"></span> ZAL’THERA</div>
-        </footer>
-      </div>
-      <div class="fade"></div>
-    </section>
-
-  </main>
-
-  <!-- PRELOADER SCRIPT -->
-  <script>
-    window.addEventListener("load", function () {
-      const loader = document.getElementById("preloader");
-      loader.style.opacity = "0";
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 600);
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>
