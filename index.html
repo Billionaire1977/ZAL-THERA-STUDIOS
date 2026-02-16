@@ -3,263 +3,276 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ZAL’THERA — Governance & Audit</title>
+  <title>ZAL’THERA – Governance & Audit für AI & Automation</title>
+  <meta name="description" content="ZAL’THERA: Governance & Audit für AI- und Automationsprozesse. Kontrolliert. Nachvollziehbar. Ohne Autonomie." />
 
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
-  <!-- IMPORTANT: styles.css must be in repo ROOT (same level as index.html) -->
-  <link rel="stylesheet" href="styles.css?v=99" />
-  <meta name="theme-color" content="#0b1020" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="page-home" id="top">
+<body>
 
   <!-- NAV -->
-  <header class="topbar">
-    <div class="wrap topbar__inner">
-      <a class="brand" href="#top" aria-label="ZAL’THERA">
-        <span class="brand__mark">ZAL’THERA</span>
-      </a>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">ZAL’THERA</div>
 
-      <nav class="nav" aria-label="Navigation">
-        <a class="nav__link" href="#model">MODEL</a>
-        <a class="nav__link" href="#offer">ANGEBOT</a>
-        <a class="nav__link" href="#for">FÜR WEN</a>
-        <a class="nav__link" href="#contact">KONTAKT</a>
-        <a class="nav__link" href="impressum.html">IMPRESSUM</a>
-        <a class="nav__link" href="datenschutz.html">DATENSCHUTZ</a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="#home">Home</a>
+        <a href="#model">Model</a>
+        <a href="#angebot">Angebot</a>
+        <a href="#fuerwen">Für wen</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </nav>
 
-      <div class="topbar__cta">
-        <a class="btn btn--primary" href="#contact">30-Min Call</a>
-      </div>
+      <a class="btn btn-primary" href="#kontakt">30-Min Call</a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero" aria-label="Hero">
-    <div class="wrap hero__inner">
-      <div class="kicker">GOVERNANCE • IDENTITY • AUDIT • EXPLAINABILITY</div>
-
-      <h1 class="hero__title">
-        Kontrollierte Ausführung<br />
-        für AI &amp; Automation.
-      </h1>
-
-      <p class="hero__subtitle">
-        ZAL’THERA ist ein Governance-Rahmen für kritische Systeme:
-        Aktionen laufen nur durch Regeln, Identität und Audit — nicht durch Autonomie.
+  <section id="home" class="hero readable" style="background-image: url('assets/hero-web.png');">
+    <div class="container">
+      <p class="small" style="letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px;">
+        Governance · Identity · Audit · Explainability
       </p>
 
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#offer">Angebot ansehen</a>
-        <a class="btn btn--ghost" href="#contact">Kontakt / Private Access</a>
+      <h1>Kontrollierte Ausführung<br/>für AI & Automation.</h1>
+
+      <p style="max-width: 780px; margin-top: 14px;">
+        ZAL’THERA ist ein Governance-Rahmen für kritische Systeme: Aktionen laufen nur durch Regeln, Identität und Audit —
+        nicht durch Autonomie.
+      </p>
+
+      <div style="margin-top: 18px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="#angebot">Angebot ansehen</a>
+        <a class="btn" href="#kontakt">Kontakt / Private Access</a>
       </div>
 
-      <div class="hero__chips" aria-label="Principles">
-        <span class="chip">Policy → Identity → Safeguard → Audit → Execute</span>
-        <span class="chip chip--danger">No Autonomy</span>
-        <span class="chip">Export-fähig</span>
-        <span class="chip">Board-tauglich</span>
+      <div class="pills" aria-label="Kerneigenschaften">
+        <span class="pill">Policy → Identity → Safeguard → Audit → Execute</span>
+        <span class="pill">No Autonomy</span>
+        <span class="pill">Export-fähig</span>
+        <span class="pill">Board-tauglich</span>
       </div>
     </div>
   </section>
 
   <!-- MODEL -->
-  <section class="section section--light" id="model">
-    <div class="wrap">
-      <h2 class="section__title">Das Modell</h2>
-      <p class="section__lead">
+  <section id="model" class="section readable" style="background-image: url('assets/hero-web.png');">
+    <div class="container">
+      <h2>Das Modell</h2>
+      <p style="max-width: 900px;">
         ZAL’THERA baut keine KI. ZAL’THERA baut den Kontrollrahmen darum.
-        Das Ergebnis: klare Verantwortlichkeit, nachvollziehbare Entscheidungen, auditierbare Ausführung.
+        Ergebnis: klare Verantwortlichkeit, nachvollziehbare Entscheidungen und auditierbare Ausführung.
       </p>
 
-      <div class="stack">
-        <div class="stack__row">
+      <div class="glass light card" style="margin-top:16px;">
+        <div class="pills" style="margin-top:0;">
           <span class="pill">Policy</span>
-          <span class="arrow">→</span>
+          <span class="pill">→</span>
           <span class="pill">Identity</span>
-          <span class="arrow">→</span>
+          <span class="pill">→</span>
           <span class="pill">Safeguard</span>
-          <span class="arrow">→</span>
+          <span class="pill">→</span>
           <span class="pill">Audit</span>
-          <span class="arrow">→</span>
+          <span class="pill">→</span>
           <span class="pill">Execute</span>
         </div>
       </div>
 
-      <div class="grid-3">
-        <article class="card card--light">
-          <div class="card__icon">🧩</div>
-          <h3 class="card__title">Governance</h3>
-          <p class="card__text">Explizite Regeln statt impliziter Automatismen. Keine unsichtbaren Aktionen.</p>
-        </article>
+      <div class="grid" style="margin-top: 16px;">
+        <div class="col-4 glass light card">
+          <h3>Governance</h3>
+          <p>Explizite Regeln statt impliziter Automatismen. Keine unsichtbaren Aktionen.</p>
+        </div>
 
-        <article class="card card--light">
-          <div class="card__icon">🛡️</div>
-          <h3 class="card__title">Identity &amp; Safeguards</h3>
-          <p class="card__text">Wer darf was – wann – wozu. Kritische Aktionen sind scoped &amp; timeboxed.</p>
-        </article>
+        <div class="col-4 glass light card">
+          <h3>Identity &amp; Safeguards</h3>
+          <p>Wer darf was – wann – wozu. Kritische Aktionen sind scoped &amp; timeboxed.</p>
+        </div>
 
-        <article class="card card--light">
-          <div class="card__icon">📜</div>
-          <h3 class="card__title">Audit &amp; Explainability</h3>
-          <p class="card__text">WHY/WHO/WHAT: Jede Entscheidung wird protokolliert, erklärbar und exportierbar.</p>
-        </article>
-      </div>
+        <div class="col-4 glass light card">
+          <h3>Audit &amp; Explainability</h3>
+          <p>WHY/WHO/WHAT: Jede Entscheidung wird protokolliert, erklärbar und exportierbar.</p>
+        </div>
 
-      <div class="guarantee">
-        <h3 class="guarantee__title">Kern-Garantien</h3>
-        <ul class="guarantee__list">
-          <li><strong>Controlled Execution</strong> — Aktionen laufen nur durch Gates.</li>
-          <li><strong>Attribution</strong> — Identität, Scope, Target und Entscheidung sind gebunden.</li>
-          <li><strong>Audit Ready</strong> — vollständige Nachvollziehbarkeit inkl. Exporte.</li>
-          <li><strong>Explainable</strong> — klare Gründe für Allow/Block.</li>
-          <li><strong>No Autonomy</strong> — kein selbstständiges Handeln, keine Blackbox-Ausführung.</li>
-        </ul>
+        <div class="col-12 glass light card">
+          <h3>Kern-Garantien</h3>
+          <ul style="margin: 10px 0 0 18px;">
+            <li><strong>Controlled Execution</strong> — Aktionen laufen nur durch Gates.</li>
+            <li><strong>Attribution</strong> — Identität, Scope, Target und Entscheidung sind gebunden.</li>
+            <li><strong>Audit Ready</strong> — vollständige Nachvollziehbarkeit inkl. Exporte.</li>
+            <li><strong>Explainable</strong> — klare Gründe für Allow/Block.</li>
+            <li><strong>No Autonomy</strong> — kein selbstständiges Handeln, keine Blackbox-Ausführung.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- OFFER -->
-  <section class="section section--light" id="offer">
-    <div class="wrap">
-      <h2 class="section__title">Angebot</h2>
-      <p class="section__lead">
-        Drei Einstiegspunkte — Premium-Scope. Preise werden nicht öffentlich diskutiert.
+  <!-- ANGEBOT -->
+  <section id="angebot" class="section readable" style="background-image: url('assets/hero-web.png');">
+    <div class="container">
+      <p class="small" style="letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px;">
+        Unser Angebot
+      </p>
+      <h2>Start klar — und auditierbar</h2>
+      <p style="max-width: 900px;">
+        Drei Einstiegspunkte. Premium-Scope: Preise werden nicht öffentlich diskutiert.
+        Du bekommst klare Deliverables, klare Grenzen, klare Nachweise.
       </p>
 
-      <div class="grid-3 offers">
-        <article class="offerCard">
-          <div class="offerCard__kicker">STUFE 1</div>
-          <h3 class="offerCard__title">Governance Architecture Assessment</h3>
-          <p class="offerCard__text">Risiko-Analyse, Gap-Mapping, Executive Report.</p>
-          <ul class="offerCard__list">
+      <div class="grid" style="margin-top:16px;">
+        <!-- STUFE 1 -->
+        <div class="col-4 glass light offer">
+          <div class="title">Stufe 1</div>
+          <h3 style="margin-top:8px;">Governance Architecture Assessment</h3>
+          <p class="note">Risiko-Analyse, Gap-Mapping, Executive Report.</p>
+          <ul>
             <li>Risiko-Heatmap &amp; Scope</li>
             <li>Governance-Blueprint</li>
             <li>Prioritäten &amp; Roadmap</li>
           </ul>
-          <a class="btn btn--primary btn--full" href="#contact">Assessment anfragen</a>
-        </article>
+          <div style="margin-top:14px;">
+            <a class="btn" href="#kontakt">Assessment anfragen</a>
+          </div>
+        </div>
 
-        <article class="offerCard">
-          <div class="offerCard__kicker">STUFE 2</div>
-          <h3 class="offerCard__title">Controlled Pilot Implementation</h3>
-          <p class="offerCard__text">Ein kontrollierter Live-Prozess mit Gates &amp; Audit-Trail.</p>
-          <ul class="offerCard__list">
+        <!-- STUFE 2 -->
+        <div class="col-4 glass light offer">
+          <div class="title">Stufe 2</div>
+          <h3 style="margin-top:8px;">Controlled Pilot Implementation</h3>
+          <p class="note">Ein kontrollierter Live-Prozess mit Gates &amp; Audit-Trail.</p>
+          <ul>
             <li>1 definierter Prozess</li>
             <li>Safeguard + Timebox</li>
             <li>Explainability View</li>
           </ul>
-          <a class="btn btn--primary btn--full" href="#contact">Pilot anfragen</a>
-        </article>
+          <div style="margin-top:14px;">
+            <a class="btn btn-primary" href="#kontakt">Pilot anfragen</a>
+          </div>
+        </div>
 
-        <article class="offerCard">
-          <div class="offerCard__kicker">STUFE 3</div>
-          <h3 class="offerCard__title">Governance Stack Integration</h3>
-          <p class="offerCard__text">Skalierung auf mehrere Prozesse, Compliance-Struktur, Exporte.</p>
-          <ul class="offerCard__list">
+        <!-- STUFE 3 -->
+        <div class="col-4 glass light offer">
+          <div class="title">Stufe 3</div>
+          <h3 style="margin-top:8px;">Governance Stack Integration</h3>
+          <p class="note">Skalierung auf mehrere Prozesse, Compliance-Struktur, Exporte.</p>
+          <ul>
             <li>Multi-Process Governance</li>
             <li>Compliance Mapping</li>
             <li>Reporting &amp; Exports</li>
           </ul>
-          <a class="btn btn--primary btn--full" href="#contact">Integration anfragen</a>
-        </article>
-      </div>
-
-      <p class="section__note">
-        Hinweis: Premium-Scope wird nach Risiko, Kritikalität und Integrations-Tiefe definiert.
-      </p>
-    </div>
-  </section>
-
-  <!-- FOR WHO -->
-  <section class="section section--light" id="for">
-    <div class="wrap">
-      <h2 class="section__title">Für wen</h2>
-      <p class="section__lead">
-        Für Teams, die Verantwortung tragen — nicht für AI-Spielwiesen.
-      </p>
-
-      <div class="tiles">
-        <a class="tile tile--industry" href="#contact" aria-label="Mittelstand & Industrie">
-          <div class="tile__label">Mittelstand &amp; Industrie</div>
-        </a>
-
-        <a class="tile tile--automation" href="#contact" aria-label="Automatisierungsteams">
-          <div class="tile__label">Automatisierungsteams</div>
-        </a>
-
-        <a class="tile tile--compliance" href="#contact" aria-label="Compliance-sensible Bereiche">
-          <div class="tile__label">Compliance-sensible Bereiche</div>
-        </a>
+          <div style="margin-top:14px;">
+            <a class="btn" href="#kontakt">Integration anfragen</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section section--dark" id="contact">
-    <div class="wrap">
-      <div class="section__topline">
-        <h2 class="section__title section__title--dark">Kontakt</h2>
-        <div class="section__actions">
-          <a class="btn btn--primary" href="#contact">30-Min Call buchen</a>
-          <a class="btn btn--ghost" href="#contact">Private Access</a>
+  <!-- FÜR WEN -->
+  <section id="fuerwen" class="section readable" style="background-image: url('assets/hero-web.png');">
+    <div class="container">
+      <h2>Für wen ich arbeite</h2>
+      <p style="max-width: 900px;">
+        Für Teams, die Verantwortung tragen — und Systeme so bauen müssen, dass sie nachvollziehbar, kontrolliert und beweisbar bleiben.
+      </p>
+
+      <div class="grid" style="margin-top: 16px;">
+        <div class="col-4 tile">
+          <img src="assets/tile-industry.png" alt="Mittelstand & Industrie" />
+          <div class="label">Mittelstand &amp; Industrie</div>
+        </div>
+
+        <div class="col-4 tile">
+          <img src="assets/tile-automation.png" alt="Automatisierungsteams" />
+          <div class="label">Automatisierungsteams</div>
+        </div>
+
+        <div class="col-4 tile">
+          <img src="assets/tile-compliance.png" alt="Compliance-sensible Bereiche" />
+          <div class="label">Compliance-sensible Bereiche</div>
         </div>
       </div>
 
-      <div class="contact">
-        <h3 class="contact__title">Kontakt / Private Access</h3>
-        <p class="contact__subtitle">Kurzer Kontext reicht. Antwort i. d. R. innerhalb von 24–48h.</p>
+      <p class="small" style="margin-top: 14px;">
+        Ich baue Governance-Flows, die riskante Aktionen verhindern, Entscheidungen nachvollziehbar machen und Compliance vereinfachen —
+        lokal, erklärbar und ohne Autonomie.
+      </p>
+    </div>
+  </section>
 
-        <!-- Replace with your real Formspree endpoint -->
-        <form class="form" method="POST" action="https://formspree.io/f/XXXXXXXX">
-          <div class="form__row">
-            <label class="field">
-              <span class="field__label">Name</span>
-              <input class="field__input" type="text" name="name" placeholder="Dein Name" required />
-            </label>
-
-            <label class="field">
-              <span class="field__label">E-Mail</span>
-              <input class="field__input" type="email" name="email" placeholder="name@firma.de" required />
-            </label>
+  <!-- KONTAKT -->
+  <section id="kontakt" class="section readable" style="background-image: url('assets/hero-web.png');">
+    <div class="container">
+      <div class="grid">
+        <div class="col-12 glass light card">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap:wrap;">
+            <div>
+              <h2 style="margin-bottom:6px;">Kontakt / Private Access</h2>
+              <p style="margin:0;">Kurzer Kontext reicht. Antwort i. d. R. innerhalb von 24–48h.</p>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn btn-primary" href="#kontakt">30-Min Call buchen</a>
+              <a class="btn" href="mailto:contact@zalthera.de">E-Mail</a>
+            </div>
           </div>
 
-          <label class="field">
-            <span class="field__label">Interesse</span>
-            <select class="field__input" name="interest" required>
-              <option value="" selected disabled>Bitte auswählen…</option>
-              <option>Governance Architecture Assessment</option>
-              <option>Controlled Pilot Implementation</option>
-              <option>Governance Stack Integration</option>
-              <option>Allgemeine Anfrage</option>
-            </select>
-          </label>
+          <!-- Formspree -->
+          <!-- WICHTIG: Ersetze die action-URL durch deinen echten Formspree Endpoint -->
+          <!-- z.B. action="https://formspree.io/f/abcdwxyz" -->
+          <form style="margin-top:16px;" action="https://formspree.io/f/XXXXXXX" method="POST">
+            <div class="grid">
+              <div class="col-6">
+                <label class="small" for="name">NAME</label>
+                <input id="name" name="name" type="text" placeholder="Dein Name" required />
+              </div>
+              <div class="col-6">
+                <label class="small" for="email">E-MAIL</label>
+                <input id="email" name="email" type="email" placeholder="name@firma.de" required />
+              </div>
+              <div class="col-12">
+                <label class="small" for="interest">INTERESSE</label>
+                <select id="interest" name="interest" required>
+                  <option value="" selected disabled>Bitte auswählen…</option>
+                  <option>Assessment (Stufe 1)</option>
+                  <option>Controlled Pilot (Stufe 2)</option>
+                  <option>Integration (Stufe 3)</option>
+                  <option>Private Access / Gespräch</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="small" for="message">NACHRICHT</label>
+                <textarea id="message" name="message" placeholder="Kurz: System / Prozess / Risiko / Ziel / Timeline …" required></textarea>
+              </div>
+            </div>
 
-          <label class="field">
-            <span class="field__label">Nachricht</span>
-            <textarea class="field__input field__textarea" name="message" rows="5"
-              placeholder="Kurz: System / Prozess / Risiko / Ziel / Timeline …" required></textarea>
-          </label>
+            <div style="margin-top: 12px; display:flex; justify-content:flex-end;">
+              <button class="btn btn-primary" type="submit">Absenden</button>
+            </div>
 
-          <button class="btn btn--primary btn--full" type="submit">Absenden</button>
-          <p class="form__fineprint">Mit dem Absenden akzeptierst du unsere <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-        </form>
+            <p class="small" style="margin-top:10px;">
+              Mit dem Absenden akzeptierst du unsere <a href="datenschutz.html">Datenschutzerklärung</a>.
+            </p>
+          </form>
+        </div>
+      </div>
 
-        <footer class="footer">
-          <span>© 2026 ZAL’THERA</span>
-          <span class="footer__sep">·</span>
-          <a href="impressum.html">Impressum</a>
-          <span class="footer__sep">·</span>
-          <a href="datenschutz.html">Datenschutz</a>
-        </footer>
+      <div class="footer" style="margin-top: 22px;">
+        <div class="container" style="width:100%; padding:0;">
+          © 2026 ZAL’THERA · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+        </div>
       </div>
     </div>
   </section>
 
 </body>
 </html>
-
 
