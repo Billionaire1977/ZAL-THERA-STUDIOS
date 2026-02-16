@@ -3,167 +3,148 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ZAL’THERA — Digital Identity & Governance Universe</title>
+  <title>ZAL’THERA — Governance & Audit für KI- und Automationsprozesse</title>
 
   <link rel="icon" href="./assets/favicon-32.png" />
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
-  <link rel="stylesheet" href="./styles.css?v=10" />
+  <link rel="stylesheet" href="./styles.css?v=20" />
 </head>
 
 <body id="top">
 
   <!-- NAV -->
   <header class="nav">
-    <a class="brand" href="./index.html#top">ZAL’THERA</a>
-    <nav class="links">
-      <a href="#identity">IDENTITY</a>
-      <a href="#system">SYSTEM</a>
-      <a href="#studio">STUDIO</a>
-      <a href="#access">ACCESS</a>
-      <a href="#manifest">MANIFEST</a>
-      <a href="./impressum.html">IMPRESSUM</a>
-      <a href="./datenschutz.html">DATENSCHUTZ</a>
+    <a class="brand" href="#top">ZAL’THERA</a>
+
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="#top" class="is-active">Home</a>
+      <a href="#offer">Angebot</a>
+      <a href="#about">Über mich</a>
+      <a href="#contact">Kontakt</a>
+      <a class="nav-legal" href="./impressum.html">Impressum</a>
+      <a class="nav-legal" href="./datenschutz.html">Datenschutz</a>
     </nav>
+
+    <a class="nav-cta" href="#contact">30-Min Call buchen</a>
   </header>
 
-  <!-- 1) HOME (hero-1.png) -->
-  <section class="hero hero--one" aria-label="Home">
-    <div class="overlay"></div>
+  <!-- HERO -->
+  <section class="hero" aria-label="Start">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
 
     <div class="hero__inner">
-      <div class="kicker">DIGITAL IDENTITY & GOVERNANCE UNIVERSE</div>
-      <h1>ZAL’THERA</h1>
-      <p class="sub">
-        Ein Governance- und Identity-System für kontrollierte, erklärbare Ausführung in komplexen Umgebungen.
-      </p>
+      <h1>Governance &amp; Audit für<br>KI- und Automationsprozesse.</h1>
+      <p class="hero__sub">Kontrolliert. Nachvollziehbar. Ohne Autonomie.</p>
 
       <div class="cta">
-        <a class="btn btn--solid" href="#identity">IDENTITY</a>
-        <a class="btn btn--ghost" href="#access">PRIVATE ACCESS</a>
-      </div>
-
-      <div class="meta">
-        <span>Policy</span>
-        <span>Identity</span>
-        <span>Audit</span>
-        <span>Execute</span>
+        <!-- TODO: Ersetze den Link später durch Calendly/Bookings URL -->
+        <a class="btn btn--primary" href="#contact">30-Min Call buchen</a>
+        <a class="btn btn--secondary" href="#contact">Kontakt / Private Access</a>
       </div>
     </div>
 
-    <div class="fade"></div>
+    <div class="hero__fade" aria-hidden="true"></div>
   </section>
 
-  <!-- 2) IDENTITY (hero-2.png) -->
-  <section class="hero hero--two" id="identity" aria-label="Identity">
-    <div class="overlay"></div>
+  <!-- WHAT I DO -->
+  <section class="section" id="what">
+    <div class="container">
+      <h2 class="section__title">Was ich tue:</h2>
 
-    <div class="hero__inner">
-      <div class="kicker">IDENTITY</div>
-      <h2>Was ist ZAL’THERA?</h2>
-      <p class="sub">
-        ZAL’THERA definiert digitale Identität als kontrollierbaren Ursprung:
-        Entscheidungen sind überprüfbar, Aktionen sind begrenzt, alles läuft durch Governance.
-      </p>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">🧭</div>
+          <h3 class="card__title">Governance Layer</h3>
+          <p class="card__text">Regeln, Freigaben, Kontrollstufen — damit Systeme kontrolliert ausführbar bleiben.</p>
+        </article>
 
-      <div class="cards">
-        <div class="card">
-          <div class="card__title">Governance</div>
-          <div class="card__text">Aktionen laufen nur durch Regeln — nicht durch Zufall.</div>
-        </div>
-        <div class="card">
-          <div class="card__title">Identity Core</div>
-          <div class="card__text">Berechtigungen sind an Identität gebunden — nachvollziehbar.</div>
-        </div>
-        <div class="card">
-          <div class="card__title">Audit</div>
-          <div class="card__text">Jede Aktion ist protokolliert — erklärbar und exportierbar.</div>
-        </div>
-      </div>
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">🛡️</div>
+          <h3 class="card__title">Identity &amp; Safeguards</h3>
+          <p class="card__text">Berechtigungen &amp; Schutzmechanismen — wer darf was, wann, wozu, und warum.</p>
+        </article>
 
-      <div class="cta">
-        <a class="btn btn--solid" href="#system">SYSTEM</a>
-        <a class="btn btn--ghost" href="#access">ACCESS</a>
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">🔎</div>
+          <h3 class="card__title">Audit &amp; Explainability</h3>
+          <p class="card__text">Protokollierung &amp; Nachvollziehbarkeit — Beweisbarkeit, Exporte, klare WHY-Ansichten.</p>
+        </article>
       </div>
     </div>
-
-    <div class="fade"></div>
   </section>
 
-  <!-- 3) SYSTEM (hero-3.png) -->
-  <section class="hero hero--three" id="system" aria-label="System">
-    <div class="overlay"></div>
+  <!-- FOR WHOM -->
+  <section class="section section--soft" id="about">
+    <div class="container">
+      <h2 class="section__title">Für wen ich arbeite:</h2>
 
-    <div class="hero__inner">
-      <div class="kicker">SYSTEM</div>
-      <h2>Architektur, nicht Marketing</h2>
-      <p class="sub">
-        Kernprinzip: <strong>Policy → Identity → Audit → Execute</strong>.
-        Keine Autonomie. Keine unsichtbaren Aktionen. Nur kontrollierte Ausführung.
-      </p>
+      <div class="grid grid--3">
+        <div class="tile">
+          <div class="tile__media tile__media--industry" aria-hidden="true"></div>
+          <div class="tile__label">Mittelstand &amp; Industrie</div>
+        </div>
 
-      <div class="stack">
-        <div class="stack__row">
-          <span class="pill">Policy</span>
-          <span class="arrow">→</span>
-          <span class="pill">Identity</span>
-          <span class="arrow">→</span>
-          <span class="pill">Audit</span>
-          <span class="arrow">→</span>
-          <span class="pill">Execute</span>
+        <div class="tile">
+          <div class="tile__media tile__media--automation" aria-hidden="true"></div>
+          <div class="tile__label">Automatisierungsteams</div>
+        </div>
+
+        <div class="tile">
+          <div class="tile__media tile__media--compliance" aria-hidden="true"></div>
+          <div class="tile__label">Compliance-sensible Bereiche</div>
         </div>
       </div>
 
-      <div class="cta">
-        <a class="btn btn--solid" href="#studio">STUDIO</a>
-        <a class="btn btn--ghost" href="#manifest">MANIFEST</a>
+      <div class="about">
+        <p class="about__text">
+          Ich baue Governance-Flows, die riskante Aktionen verhindern, Entscheidungen nachvollziehbar machen
+          und Compliance vereinfachen — lokal, erklärbar und ohne Autonomie.
+        </p>
       </div>
     </div>
-
-    <div class="fade"></div>
   </section>
 
-  <!-- 4) STUDIO (hero-4.png) -->
-  <section class="hero hero--four" id="studio" aria-label="Studio">
-    <div class="overlay"></div>
+  <!-- OFFER -->
+  <section class="section" id="offer">
+    <div class="container">
+      <h2 class="section__title">Unser Angebot:</h2>
 
-    <div class="hero__inner">
-      <div class="kicker">STUDIO</div>
-      <h2>Manifestation (nicht der Kern)</h2>
-      <p class="sub">
-        Studio ist sichtbare Form: Emblem, Visual Art, Craft. Der Core bleibt das digitale System.
-      </p>
+      <div class="grid grid--2">
+        <article class="price">
+          <h3 class="price__title">Governance QuickCheck</h3>
+          <p class="price__text">90 Min. Risikoanalyse &amp; Blueprint</p>
+          <div class="price__tag">ab <strong>490&nbsp;€</strong></div>
+          <a class="btn btn--primary btn--wide" href="#contact">QuickCheck anfragen</a>
+        </article>
 
-      <div class="cards">
-        <div class="card">
-          <div class="card__title">Emblem</div>
-          <div class="card__text">System-Siegel. Wiedererkennbar. Präzise.</div>
-        </div>
-        <div class="card">
-          <div class="card__title">Visual Art</div>
-          <div class="card__text">Technik als Ästhetik — kohärent, nicht beliebig.</div>
-        </div>
-        <div class="card">
-          <div class="card__title">Craft</div>
-          <div class="card__text">Prototypen & Qualität — keine Massenware.</div>
-        </div>
-      </div>
-
-      <div class="cta">
-        <a class="btn btn--solid" href="#access">PRIVATE ACCESS</a>
-        <a class="btn btn--ghost" href="#top">TOP</a>
+        <article class="price">
+          <h3 class="price__title">Pilot-Projekt</h3>
+          <p class="price__text">2–4 Wochen Umsetzung &amp; Testing</p>
+          <div class="price__tag">ab <strong>2.500&nbsp;€</strong></div>
+          <a class="btn btn--primary btn--wide" href="#contact">Pilot anfragen</a>
+        </article>
       </div>
     </div>
-
-    <div class="fade"></div>
   </section>
 
-  <!-- ACCESS -->
-  <section class="panel panel--dark" id="access">
-    <div class="panel__inner">
-      <div class="kicker">ACCESS</div>
-      <h2>Private Access</h2>
-      <p class="sub">
-        Zugang ist limitiert. Anfrage senden — wir prüfen und melden uns.
+  <!-- CTA BAND -->
+  <section class="ctaBand" aria-label="Call to action">
+    <div class="container ctaBand__inner">
+      <h2 class="ctaBand__title">Jetzt erstes Gespräch vereinbaren:</h2>
+      <div class="cta">
+        <a class="btn btn--primary" href="#contact">30-Min Call buchen</a>
+        <a class="btn btn--secondary" href="#contact">Kontakt / Private Access</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--dark" id="contact">
+    <div class="container">
+      <h2 class="section__title section__title--light">Kontakt / Private Access</h2>
+      <p class="section__lead">
+        Schreib mir kurz, worum es geht. Antwort in der Regel innerhalb von 24–48h.
       </p>
 
       <form class="form"
@@ -171,25 +152,38 @@
             method="POST"
             accept-charset="UTF-8">
 
-        <input type="hidden" name="_subject" value="ZAL’THERA — Private Access Request" />
+        <input type="hidden" name="_subject" value="ZAL’THERA — Anfrage" />
         <input type="hidden" name="_next" value="success.html" />
 
-        <label>
-          <span>Name</span>
-          <input type="text" name="name" placeholder="Your Name" required />
+        <div class="form__row">
+          <label class="field">
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Dein Name" required />
+          </label>
+
+          <label class="field">
+            <span>E-Mail</span>
+            <input type="email" name="email" placeholder="dein.name@email.de" required />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Interesse</span>
+          <select name="interest" required>
+            <option value="" selected disabled>Bitte auswählen…</option>
+            <option value="30-min-call">30-Min Call</option>
+            <option value="quickcheck">Governance QuickCheck</option>
+            <option value="pilot">Pilot-Projekt</option>
+            <option value="question">Frage / Sonstiges</option>
+          </select>
         </label>
 
-        <label>
-          <span>E-Mail</span>
-          <input type="email" name="email" placeholder="Your Email" required />
+        <label class="field">
+          <span>Nachricht</span>
+          <textarea name="message" placeholder="Kurz Kontext: System, Ziel, Risiko, Timeline (optional)"></textarea>
         </label>
 
-        <label>
-          <span>Nachricht (optional)</span>
-          <textarea name="message" placeholder="Optional Message"></textarea>
-        </label>
-
-        <button class="btn btn--solid" type="submit">Request Access</button>
+        <button class="btn btn--primary btn--wide" type="submit">Absenden</button>
 
         <p class="tiny">
           Mit dem Absenden akzeptierst du unsere
@@ -198,25 +192,8 @@
       </form>
 
       <p class="footer">
-        © 2026 ZAL’THERA Studios · <a href="./impressum.html">Impressum</a> · <a href="./datenschutz.html">Datenschutz</a>
+        © 2026 ZAL’THERA · <a href="./impressum.html">Impressum</a> · <a href="./datenschutz.html">Datenschutz</a>
       </p>
-    </div>
-  </section>
-
-  <!-- MANIFEST -->
-  <section class="panel panel--dark" id="manifest">
-    <div class="panel__inner">
-      <div class="kicker">MANIFEST</div>
-      <h2>Governance ist der Standard</h2>
-      <p class="lead">
-        ZAL’THERA baut Systeme, die erklärbar bleiben.
-        Jede Aktion ist gebunden an Regeln, Identität und Audit — nicht an Stimmung, nicht an Autonomie.
-      </p>
-
-      <div class="cta">
-        <a class="btn btn--solid" href="#access">PRIVATE ACCESS</a>
-        <a class="btn btn--ghost" href="#top">TOP</a>
-      </div>
     </div>
   </section>
 
