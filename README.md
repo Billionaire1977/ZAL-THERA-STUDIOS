@@ -1,10 +1,11 @@
+<!-- README.md -->
 # ZAL’THERA Website
 
-Official website for ZAL’THERA – Governance & Audit for AI and Automation.
+Official website for **ZAL’THERA** — Governance & Audit for AI and Automation.
 
 This repository contains:
 - Static website (GitHub Pages)
-- Service presentation
+- Service presentation (Model / Offer / Audience)
 - Contact flow (Formspree)
 - Legal pages (Impressum & Datenschutz)
 
@@ -14,10 +15,3 @@ This repository does NOT contain:
 - Internal policy engine
 
 Website: https://zalthera.de
-
----
-
-ZAL’THERA  
-Controlled. Traceable. Without Autonomy.
-
-Rename + professionalize README
