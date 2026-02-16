@@ -1,580 +1,299 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ZAL’THERA — Governance & Audit für KI- und Automationsprozesse</title>
+  <title>ZAL’THERA — Governance & Audit</title>
+  <meta name="description" content="ZAL’THERA — Governance & Audit für KI- und Automationsprozesse. Kontrolliert. Nachvollziehbar. Ohne Autonomie." />
 
-  <!-- Icons -->
+  <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <style>
-    /* ---- Minimal “Readability Hardening” direkt in index.html ---- */
-    :root{
-      --bg0:#07090c;
-      --bg1:#0a0f16;
-      --glass: rgba(255,255,255,.08);
-      --glass2: rgba(255,255,255,.10);
-      --stroke: rgba(255,255,255,.10);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --muted2: rgba(255,255,255,.55);
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
-      --radius: 22px;
-    }
-
-    html,body{height:100%;}
-    body{
-      margin:0;
-      color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, "SF Pro Text", "SF Pro Display", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: radial-gradient(1200px 700px at 20% -10%, rgba(120,140,255,.10), transparent 60%),
-                  radial-gradient(1000px 800px at 120% 10%, rgba(0,255,200,.08), transparent 55%),
-                  linear-gradient(180deg, var(--bg0), var(--bg1));
-      overflow-x:hidden;
-    }
-
-    /* Optional: super-subtiles globales Backdrop statt “überall hero-web.png” */
-    body::before{
-      content:"";
-      position:fixed; inset:0;
-      background-image:url("assets/hero-web.png");
-      background-size:cover;
-      background-position:center;
-      opacity:.05;               /* <- extrem niedrig */
-      filter: blur(0px) saturate(.85) contrast(1.05);
-      pointer-events:none;
-      z-index:-2;
-    }
-    body::after{
-      content:"";
-      position:fixed; inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.80));
-      pointer-events:none;
-      z-index:-1;
-    }
-
-    a{color:inherit; text-decoration:none;}
-    .container{max-width:1120px; margin:0 auto; padding:0 22px;}
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background: rgba(10,15,22,.55);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:18px;
-    }
-    .brand{
-      letter-spacing:.18em;
-      font-weight:700;
-      font-size:14px;
-      opacity:.92;
-      white-space:nowrap;
-    }
-    .nav-links{
-      display:flex; gap:18px; flex-wrap:wrap;
-      font-size:13px; letter-spacing:.08em;
-      opacity:.85;
-    }
-    .nav-links a{padding:8px 10px; border-radius:12px;}
-    .nav-links a:hover{background: rgba(255,255,255,.06);}
-    .nav-cta{
-      display:flex; gap:10px; align-items:center;
-    }
-    .pill{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      font-size:13px;
-      white-space:nowrap;
-    }
-    .pill:hover{background: rgba(255,255,255,.10);}
-
-    /* HERO: hier darf hero-web.png “dominant” sein */
-    .hero{
-      position:relative;
-      padding:72px 0 34px;
-      min-height: 64vh;
-      display:flex;
-      align-items:flex-end;
-    }
-    .hero::before{
-      content:"";
-      position:absolute; inset:0;
-      background-image:url("assets/hero-web.png");
-      background-size:cover;
-      background-position:center;
-      opacity:.95;
-      filter: saturate(.95) contrast(1.05);
-      z-index:0;
-    }
-    .hero::after{
-      content:"";
-      position:absolute; inset:0;
-      /* stärkeres Overlay für Lesbarkeit */
-      background: radial-gradient(900px 500px at 20% 10%, rgba(0,0,0,.35), transparent 60%),
-                  linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.78));
-      z-index:1;
-    }
-    .hero-content{position:relative; z-index:2;}
-    .kicker{
-      font-size:12px;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color: rgba(255,255,255,.78);
-      margin-bottom:12px;
-    }
-    h1{
-      margin:0 0 12px;
-      font-size: clamp(34px, 4.6vw, 56px);
-      line-height:1.06;
-      letter-spacing:-.02em;
-      text-shadow: 0 18px 45px rgba(0,0,0,.55);
-    }
-    .lead{
-      max-width:780px;
-      font-size: clamp(14px, 1.6vw, 16px);
-      line-height:1.55;
-      color: rgba(255,255,255,.80);
-      text-shadow: 0 14px 30px rgba(0,0,0,.50);
-      margin-bottom:18px;
-    }
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin:16px 0 16px;}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:11px 16px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.08);
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
-      font-size:13px;
-    }
-    .btn:hover{background: rgba(255,255,255,.12);}
-    .tags{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
-    .tag{
-      font-size:12px;
-      color: rgba(255,255,255,.78);
-      padding:8px 12px;
-      border-radius:999px;
-      background: rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(8px);
-    }
-
-    /* SECTIONS */
-    section{padding:44px 0;}
-    .section-title{
-      margin:0 0 10px;
-      font-size:26px;
-      letter-spacing:-.01em;
-    }
-    .section-sub{
-      margin:0 0 18px;
-      color: var(--muted);
-      line-height:1.55;
-      max-width:820px;
-    }
-
-    /* Glass components: höhere Opacity = besser lesbar */
-    .glass{
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-    }
-    .grid-3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-    }
-    @media (max-width: 920px){
-      .grid-3{grid-template-columns:1fr;}
-      .nav-inner{align-items:flex-start; flex-direction:column;}
-      .nav-cta{width:100%;}
-    }
-
-    .card{padding:18px;}
-    .card h3{margin:0 0 8px; font-size:14px; letter-spacing:.10em; text-transform:uppercase; opacity:.88;}
-    .card p{margin:0; color: var(--muted); line-height:1.55; font-size:14px;}
-
-    .flow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      padding:14px;
-    }
-    .step{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      background: rgba(0,0,0,.28);
-      border: 1px solid rgba(255,255,255,.10);
-      color: rgba(255,255,255,.82);
-      font-size:13px;
-      white-space:nowrap;
-    }
-
-    /* Angebot cards */
-    .offer-grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-    }
-    @media (max-width: 980px){ .offer-grid{grid-template-columns:1fr;} }
-    .offer{padding:18px;}
-    .badge{
-      display:inline-block;
-      font-size:12px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color: rgba(255,255,255,.72);
-      margin-bottom:10px;
-    }
-    .offer h3{margin:0 0 8px; font-size:18px;}
-    .offer .desc{margin:0 0 12px; color: var(--muted); line-height:1.55;}
-    .offer ul{margin:0; padding-left:18px; color: var(--muted); line-height:1.65;}
-    .offer .cta{margin-top:14px;}
-
-    /* “Für wen” Tiles */
-    .tiles{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
-    @media (max-width: 980px){ .tiles{grid-template-columns:1fr;} }
-    .tile{
-      position:relative;
-      border-radius: 18px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: 0 18px 55px rgba(0,0,0,.45);
-      min-height:160px;
-      display:flex;
-      align-items:flex-end;
-    }
-    .tile img{
-      position:absolute; inset:0;
-      width:100%; height:100%; object-fit:cover;
-      filter: saturate(.95) contrast(1.05);
-      transform: scale(1.02);
-    }
-    .tile::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.75));
-    }
-    .tile-label{
-      position:relative;
-      z-index:2;
-      padding:14px 14px 12px;
-      font-weight:700;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:12px;
-      color: rgba(255,255,255,.92);
-    }
-
-    /* Contact form */
-    .contact-wrap{padding:20px;}
-    .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
-    @media (max-width: 820px){ .form-grid{grid-template-columns:1fr;} }
-    label{display:block; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color: var(--muted2); margin:6px 0 6px;}
-    input, select, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.28);
-      color: rgba(255,255,255,.88);
-      outline:none;
-    }
-    textarea{min-height:120px; resize:vertical;}
-    input::placeholder, textarea::placeholder{color: rgba(255,255,255,.35);}
-    .form-actions{display:flex; justify-content:flex-end; margin-top:12px;}
-
-    footer{
-      padding:28px 0 34px;
-      color: rgba(255,255,255,.55);
-      font-size:13px;
-      border-top:1px solid rgba(255,255,255,.06);
-      background: rgba(0,0,0,.20);
-    }
-    .footer-inner{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;}
-    .footer-inner a{opacity:.85;}
-    .footer-inner a:hover{opacity:1;}
-  </style>
+  <!-- Optional: social preview -->
+  <meta property="og:title" content="ZAL’THERA — Governance & Audit" />
+  <meta property="og:description" content="Kontrollierte Ausführung für AI & Automation. Policy → Identity → Safeguard → Audit → Execute." />
+  <meta property="og:image" content="assets/hero-web.png" />
 </head>
 
 <body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <div class="brand">ZAL’THERA</div>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#home" aria-label="ZAL’THERA Home">
+        <span class="brand-mark">ZAL’THERA</span>
+      </a>
 
-        <nav class="nav-links" aria-label="Hauptnavigation">
-          <a href="#home">Home</a>
-          <a href="#model">Model</a>
-          <a href="#angebot">Angebot</a>
-          <a href="#fuerwen">Für wen</a>
-          <a href="#kontakt">Kontakt</a>
-          <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a>
-        </nav>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a href="#home">Home</a>
+        <a href="#modell">Modell</a>
+        <a href="#angebot">Angebot</a>
+        <a href="#fuerwen">Für wen</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
 
-        <div class="nav-cta">
-          <a class="pill" href="#kontakt">30-Min Call</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header id="home" class="hero">
-    <div class="container hero-content">
-      <div class="kicker">Governance · Identity · Audit · Explainability</div>
-      <h1>Kontrollierte Ausführung<br/>für AI &amp; Automation.</h1>
-      <p class="lead">
-        ZAL’THERA ist ein Governance-Rahmen für kritische Systeme:
-        Aktionen laufen nur durch Regeln, Identität und Audit — nicht durch Autonomie.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn" href="#angebot">Angebot ansehen</a>
-        <a class="btn" href="#kontakt">Kontakt / Private Access</a>
-      </div>
-
-      <div class="tags">
-        <span class="tag">Policy → Identity → Safeguard → Audit → Execute</span>
-        <span class="tag">No Autonomy</span>
-        <span class="tag">Export-fähig</span>
-        <span class="tag">Board-tauglich</span>
+      <div class="topbar-cta">
+        <a class="chip chip-cta" href="#kontakt">30-Min Call</a>
       </div>
     </div>
   </header>
 
-  <!-- MODEL -->
-  <section id="model">
-    <div class="container">
-      <h2 class="section-title">Das Modell</h2>
-      <p class="section-sub">
-        ZAL’THERA baut keine KI. ZAL’THERA baut den Kontrollrahmen darum.
-        Ergebnis: klare Verantwortlichkeit, nachvollziehbare Entscheidungen und auditierbare Ausführung.
-      </p>
+  <main id="home">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-bg" aria-hidden="true"></div>
 
-      <div class="glass flow" aria-label="Governance Flow">
-        <span class="step">Policy</span>
-        <span class="step">→</span>
-        <span class="step">Identity</span>
-        <span class="step">→</span>
-        <span class="step">Safeguard</span>
-        <span class="step">→</span>
-        <span class="step">Audit</span>
-        <span class="step">→</span>
-        <span class="step">Execute</span>
-      </div>
+      <div class="container hero-content">
+        <div class="hero-panel">
+          <div class="kicker">GOVERNANCE · IDENTITY · AUDIT · EXPLAINABILITY</div>
+          <h1>Kontrollierte Ausführung<br/>für AI &amp; Automation.</h1>
+          <p class="lead">
+            ZAL’THERA ist ein Governance-Rahmen für kritische Systeme:
+            Aktionen laufen nur durch Regeln, Identität und Audit — nicht durch Autonomie.
+          </p>
 
-      <div style="height:14px"></div>
+          <div class="hero-actions">
+            <a class="btn primary" href="#angebot">Angebot ansehen</a>
+            <a class="btn ghost" href="#kontakt">Kontakt / Private Access</a>
+          </div>
 
-      <div class="grid-3">
-        <div class="glass card">
-          <h3>Governance</h3>
-          <p>Explizite Regeln statt impliziter Automatismen. Keine unsichtbaren Aktionen.</p>
-        </div>
-        <div class="glass card">
-          <h3>Identity &amp; Safeguards</h3>
-          <p>Wer darf was — wann — wozu. Kritische Aktionen sind scoped &amp; timeboxed.</p>
-        </div>
-        <div class="glass card">
-          <h3>Audit &amp; Explainability</h3>
-          <p>WHY/WHO/WHAT: Jede Entscheidung wird protokolliert, erklärbar und exportierbar.</p>
+          <div class="tag-row" role="list" aria-label="Key Tags">
+            <span class="tag" role="listitem">Policy → Identity → Safeguard → Audit → Execute</span>
+            <span class="tag" role="listitem">No Autonomy</span>
+            <span class="tag" role="listitem">Export-fähig</span>
+            <span class="tag" role="listitem">Board-tauglich</span>
+          </div>
         </div>
       </div>
 
-      <div style="height:16px"></div>
+      <div class="hero-fade" aria-hidden="true"></div>
+    </section>
 
-      <div class="glass card">
-        <h3>Kern-Garantien</h3>
-        <p style="margin-top:8px; color: rgba(255,255,255,.78);">
-          • Controlled Execution — Aktionen laufen nur durch Gates.<br/>
-          • Attribution — Identität, Scope, Target und Entscheidung sind gebunden.<br/>
-          • Audit Ready — vollständige Nachvollziehbarkeit inkl. Exporte.<br/>
-          • Explainable — klare Gründe für Allow/Block.<br/>
-          • No Autonomy — kein selbstständiges Handeln, keine Blackbox-Ausführung.
+    <!-- MODEL -->
+    <section id="modell" class="section">
+      <div class="container">
+        <h2>Das Modell</h2>
+        <p class="muted">
+          ZAL’THERA baut keine KI. ZAL’THERA baut den Kontrollrahmen darum.
+          Ergebnis: klare Verantwortlichkeit, nachvollziehbare Entscheidungen und auditierbare Ausführung.
+        </p>
+
+        <div class="flowbar" aria-label="Flow">
+          <span class="flow-pill">Policy</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-pill">Identity</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-pill">Safeguard</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-pill">Audit</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-pill">Execute</span>
+        </div>
+
+        <div class="cards-3">
+          <div class="card glass">
+            <div class="card-title">
+              <span class="icon">🧩</span>
+              <strong>Governance</strong>
+            </div>
+            <p>Explizite Regeln statt impliziter Automatismen. Keine unsichtbaren Aktionen.</p>
+          </div>
+
+          <div class="card glass">
+            <div class="card-title">
+              <span class="icon">🛡️</span>
+              <strong>Identity &amp; Safeguards</strong>
+            </div>
+            <p>Wer darf was — wann — wozu. Kritische Aktionen sind scoped &amp; timeboxed.</p>
+          </div>
+
+          <div class="card glass">
+            <div class="card-title">
+              <span class="icon">📜</span>
+              <strong>Audit &amp; Explainability</strong>
+            </div>
+            <p>WHY/WHO/WHAT: Jede Entscheidung wird protokolliert, erklärbar und exportierbar.</p>
+          </div>
+        </div>
+
+        <div class="panel glass panel-wide">
+          <h3>Kern-Garantien</h3>
+          <ul>
+            <li><strong>Controlled Execution</strong> — Aktionen laufen nur durch Gates.</li>
+            <li><strong>Attribution</strong> — Identität, Scope, Target und Entscheidung sind gebunden.</li>
+            <li><strong>Audit Ready</strong> — vollständige Nachvollziehbarkeit inkl. Exporte.</li>
+            <li><strong>Explainable</strong> — klare Gründe für Allow/Block.</li>
+            <li><strong>No Autonomy</strong> — kein selbstständiges Handeln, keine Blackbox-Ausführung.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section id="angebot" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">UNSER ANGEBOT</div>
+            <h2>Start klar — und auditierbar</h2>
+            <p class="muted">
+              Drei Einstiegspunkte. Premium-Scope: Preise werden nicht öffentlich diskutiert.
+              Du bekommst klare Deliverables, klare Grenzen, klare Nachweise.
+            </p>
+          </div>
+        </div>
+
+        <div class="offer-grid">
+          <div class="offer glass">
+            <div class="offer-top">
+              <div class="badge">Stufe 1</div>
+              <h3>Governance Architecture<br/>Assessment</h3>
+              <p class="muted">Risiko-Analyse, Gap-Mapping, Executive Report.</p>
+            </div>
+            <ul class="bullets">
+              <li>Risiko-Heatmap &amp; Scope</li>
+              <li>Governance-Blueprint</li>
+              <li>Prioritäten &amp; Roadmap</li>
+            </ul>
+            <a class="btn soft" href="#kontakt">Assessment anfragen</a>
+          </div>
+
+          <div class="offer glass focus">
+            <div class="offer-top">
+              <div class="badge">Stufe 2</div>
+              <h3>Controlled Pilot<br/>Implementation</h3>
+              <p class="muted">Ein kontrollierter Live-Prozess mit Gates &amp; Audit-Trail.</p>
+            </div>
+            <ul class="bullets">
+              <li>1 definierter Prozess</li>
+              <li>Safeguard + Timebox</li>
+              <li>Explainability View</li>
+            </ul>
+            <a class="btn primary" href="#kontakt">Pilot anfragen</a>
+          </div>
+
+          <div class="offer glass">
+            <div class="offer-top">
+              <div class="badge">Stufe 3</div>
+              <h3>Governance Stack<br/>Integration</h3>
+              <p class="muted">Skalierung auf mehrere Prozesse, Compliance-Struktur, Exporte.</p>
+            </div>
+            <ul class="bullets">
+              <li>Multi-Process Governance</li>
+              <li>Compliance Mapping</li>
+              <li>Reporting &amp; Exports</li>
+            </ul>
+            <a class="btn soft" href="#kontakt">Integration anfragen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOR WHOM -->
+    <section id="fuerwen" class="section">
+      <div class="container">
+        <h2>Für wen ich arbeite</h2>
+        <p class="muted">
+          Für Teams, die Verantwortung tragen — und Systeme so bauen müssen, dass sie
+          nachvollziehbar, kontrolliert und beweisbar bleiben.
+        </p>
+
+        <div class="tiles">
+          <a class="tile" href="#kontakt" aria-label="Mittelstand & Industrie">
+            <div class="tile-img" style="background-image:url('assets/tile-industry.png');"></div>
+            <div class="tile-label">MITTELSTAND &amp; INDUSTRIE</div>
+          </a>
+
+          <a class="tile" href="#kontakt" aria-label="Automatisierungsteams">
+            <div class="tile-img" style="background-image:url('assets/tile-automation.png');"></div>
+            <div class="tile-label">AUTOMATISIERUNGSTEAMS</div>
+          </a>
+
+          <a class="tile" href="#kontakt" aria-label="Compliance-sensible Bereiche">
+            <div class="tile-img" style="background-image:url('assets/tile-compliance.png');"></div>
+            <div class="tile-label">COMPLIANCE-SENSIBLE BEREICHE</div>
+          </a>
+        </div>
+
+        <p class="muted small">
+          Ich baue Governance-Flows, die riskante Aktionen verhindern, Entscheidungen nachvollziehbar machen
+          und Compliance vereinfachen — lokal, erklärbar und ohne Autonomie.
         </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ANGEBOT -->
-  <section id="angebot">
-    <div class="container">
-      <h2 class="section-title">Start klar — und auditierbar</h2>
-      <p class="section-sub">
-        Drei Einstiegspunkte. Premium-Scope: Preise werden nicht öffentlich diskutiert.
-        Du bekommst klare Deliverables, klare Grenzen, klare Nachweise.
-      </p>
-
-      <div class="offer-grid">
-        <div class="glass offer">
-          <div class="badge">Stufe 1</div>
-          <h3>Governance Architecture Assessment</h3>
-          <p class="desc">Risiko-Analyse, Gap-Mapping, Executive Report.</p>
-          <ul>
-            <li>Risiko-Heatmap &amp; Scope</li>
-            <li>Governance-Blueprint</li>
-            <li>Prioritäten &amp; Roadmap</li>
-          </ul>
-          <div class="cta">
-            <a class="btn" href="#kontakt">Assessment anfragen</a>
-          </div>
-        </div>
-
-        <div class="glass offer">
-          <div class="badge">Stufe 2</div>
-          <h3>Controlled Pilot Implementation</h3>
-          <p class="desc">Ein kontrollierter Live-Prozess mit Gates &amp; Audit-Trail.</p>
-          <ul>
-            <li>1 definierter Prozess</li>
-            <li>Safeguard + Timebox</li>
-            <li>Explainability View</li>
-          </ul>
-          <div class="cta">
-            <a class="btn" href="#kontakt">Pilot anfragen</a>
-          </div>
-        </div>
-
-        <div class="glass offer">
-          <div class="badge">Stufe 3</div>
-          <h3>Governance Stack Integration</h3>
-          <p class="desc">Skalierung auf mehrere Prozesse, Compliance-Struktur, Exporte.</p>
-          <ul>
-            <li>Multi-Process Governance</li>
-            <li>Compliance Mapping</li>
-            <li>Reporting &amp; Exports</li>
-          </ul>
-          <div class="cta">
-            <a class="btn" href="#kontakt">Integration anfragen</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FÜR WEN -->
-  <section id="fuerwen">
-    <div class="container">
-      <h2 class="section-title">Für wen ich arbeite</h2>
-      <p class="section-sub">
-        Für Teams, die Verantwortung tragen — und Systeme so bauen müssen, dass sie nachvollziehbar,
-        kontrolliert und beweisbar bleiben.
-      </p>
-
-      <div class="tiles" role="list">
-        <a class="tile" role="listitem" href="#kontakt" aria-label="Mittelstand & Industrie">
-          <img src="assets/tile-industry.png" alt="Mittelstand und Industrie" />
-          <div class="tile-label">Mittelstand &amp; Industrie</div>
-        </a>
-
-        <a class="tile" role="listitem" href="#kontakt" aria-label="Automatisierungsteams">
-          <img src="assets/tile-automation.png" alt="Automatisierungsteams" />
-          <div class="tile-label">Automatisierungsteams</div>
-        </a>
-
-        <a class="tile" role="listitem" href="#kontakt" aria-label="Compliance-sensible Bereiche">
-          <img src="assets/tile-compliance.png" alt="Compliance-sensible Bereiche" />
-          <div class="tile-label">Compliance-sensible Bereiche</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAKT -->
-  <section id="kontakt">
-    <div class="container">
-      <h2 class="section-title">Kontakt / Private Access</h2>
-      <p class="section-sub">
-        Kurzer Kontext reicht. Antwort i. d. R. innerhalb von 24–48h.
-      </p>
-
-      <div class="glass contact-wrap">
-        <!-- Formspree: action anpassen -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="form-grid">
+    <!-- CONTACT -->
+    <section id="kontakt" class="section section-contact">
+      <div class="container">
+        <div class="contact-wrap glass">
+          <div class="contact-head">
             <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Dein Name" required />
+              <h2>Kontakt / Private Access</h2>
+              <p class="muted">Kurzer Kontext reicht. Antwort i. d. R. innerhalb von 24–48h.</p>
             </div>
-            <div>
-              <label for="email">E-Mail</label>
-              <input id="email" name="email" type="email" placeholder="name@firma.de" required />
+
+            <div class="contact-actions">
+              <a class="chip chip-cta" href="#kontakt">30-Min Call buchen</a>
+              <a class="chip" href="mailto:contact@zalthera.de">E-Mail</a>
             </div>
           </div>
 
-          <div style="height:10px"></div>
+          <!-- Formspree: replace action URL with your endpoint -->
+          <form class="form" action="https://formspree.io/f/XXXXXXXX" method="POST">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Dein Name" required />
+              </div>
 
-          <div>
-            <label for="interesse">Interesse</label>
-            <select id="interesse" name="interesse" required>
-              <option value="" selected disabled>Bitte auswählen…</option>
-              <option>Assessment (Stufe 1)</option>
-              <option>Pilot (Stufe 2)</option>
-              <option>Integration (Stufe 3)</option>
-              <option>Private Access / Gespräch</option>
-            </select>
+              <div class="field">
+                <label for="email">E-Mail</label>
+                <input id="email" name="email" type="email" placeholder="name@firma.de" required />
+              </div>
+
+              <div class="field field-full">
+                <label for="interest">Interesse</label>
+                <select id="interest" name="interest" required>
+                  <option value="" selected>Bitte auswählen…</option>
+                  <option>Assessment (Stufe 1)</option>
+                  <option>Pilot (Stufe 2)</option>
+                  <option>Integration (Stufe 3)</option>
+                  <option>Private Access</option>
+                </select>
+              </div>
+
+              <div class="field field-full">
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" rows="5" placeholder="Kurz: System / Prozess / Risiko / Ziel / Timeline …" required></textarea>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <button class="btn primary" type="submit">Absenden</button>
+              <div class="fineprint">
+                Mit dem Absenden akzeptierst du unsere <a href="datenschutz.html">Datenschutzerklärung</a>.
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <footer class="footer">
+          <div>© <span id="year"></span> ZAL’THERA</div>
+          <div class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <span>·</span>
+            <a href="datenschutz.html">Datenschutz</a>
           </div>
-
-          <div style="height:10px"></div>
-
-          <div>
-            <label for="msg">Nachricht</label>
-            <textarea id="msg" name="message" placeholder="Kurz: System / Prozess / Risiko / Ziel / Timeline …" required></textarea>
-          </div>
-
-          <div class="form-actions">
-            <button class="btn" type="submit">Absenden</button>
-          </div>
-
-          <p style="margin:10px 0 0; color: rgba(255,255,255,.55); font-size:12px; line-height:1.45;">
-            Mit dem Absenden akzeptierst du unsere <a href="datenschutz.html" style="text-decoration:underline;">Datenschutzerklärung</a>.
-          </p>
-        </form>
+        </footer>
       </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-inner">
-      <div>© 2026 ZAL’THERA</div>
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-        <a href="#kontakt">Kontakt</a>
-      </div>
-    </div>
-  </footer>
+    </section>
+  </main>
 
   <script>
-    // Smooth anchor scroll (klein, robust)
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const id = a.getAttribute('href');
-        if(!id || id.length < 2) return;
-        const el = document.querySelector(id);
-        if(!el) return;
-        e.preventDefault();
-        el.scrollIntoView({behavior:'smooth', block:'start'});
-      });
-    });
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
 
