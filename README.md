@@ -1,17 +1,9 @@
-<!-- README.md -->
-# ZAL’THERA Website
+<!-- Path: README.md -->
+# zalthera-website
 
-Official website for **ZAL’THERA** — Governance & Audit for AI and Automation.
+ZAL’THERA — Governance & Audit (static site)
 
-This repository contains:
-- Static website (GitHub Pages)
-- Service presentation (Model / Offer / Audience)
-- Contact flow (Formspree)
-- Legal pages (Impressum & Datenschutz)
-
-This repository does NOT contain:
-- Governance Core implementation
-- Customer projects
-- Internal policy engine
-
-Website: https://zalthera.de
+## Freeze Policy
+- `main` = latest stable
+- Tags `FREEZE_SITE_vX_Y` = canonical frozen releases (no edits)
+- 
